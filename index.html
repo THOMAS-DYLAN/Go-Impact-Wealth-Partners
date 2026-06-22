@@ -1042,230 +1042,56 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
 .services-section { background: var(--bg-alt); }
 
 /* Service cards */
-/* ══ SERVICES WHEEL — literal recreation of reference graphic ══ */
-.svc-wheel {
-  position: relative;
+/* ══ SERVICES WHEEL ══ */
+.svc-wheel-svg-wrap {
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
 }
-
-/* Mobile/tablet (<1100px): clean stacked cards, no wheel geometry */
-.svc-you-banner {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-.svc-you-banner .you-word {
-  font-family: var(--serif); font-size: 3rem; font-weight: 700;
-  color: var(--accent); line-height: 1; display: block; margin-bottom: 1rem;
-}
-.svc-you-cta {
-  display: inline-block;
-  background: var(--accent); color: #fff;
-  font-family: var(--sans); font-size: .68rem; font-weight: 600;
-  letter-spacing: .08em; text-transform: uppercase;
-  padding: .75rem 1.6rem; border-radius: 2px;
-  transition: background .2s, transform .2s;
-}
-.svc-you-cta:hover { background: #c96940; transform: translateY(-1px); }
-
-.svc-wheel-svg, .svc-you-center { display: none; }
-
+/* Mobile: hide SVG wheel, show card grid */
+.svc-wheel-svg-wrap { display: none; }
 .svc-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2px;
   background: var(--border);
+  margin-top: 2rem;
 }
 .svc-card {
   background: var(--surface);
   padding: 1.8rem 1.6rem;
-  transition: background .25s, box-shadow .25s, transform .25s;
+  transition: background .25s, transform .25s;
   position: relative;
 }
 .svc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--accent); transform: scaleX(0); transform-origin: left;
-  transition: transform .32s;
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .32s;
 }
-.svc-card:hover::before { transform: scaleX(1); }
-.svc-card:hover { background: var(--bg-alt); transform: translateY(-2px); }
+.svc-card:hover::before { transform:scaleX(1); }
+.svc-card:hover { background:var(--bg); transform:translateY(-2px); }
 .svc-card-icon {
-  width: 52px; height: 52px; border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1rem; background: var(--accent-lt);
-  transition: background .25s;
+  width:48px; height:48px; border-radius:50%;
+  border:1.5px solid var(--accent); background:var(--accent-lt);
+  display:flex; align-items:center; justify-content:center; margin-bottom:.9rem;
+  transition:background .25s;
 }
-.svc-card:hover .svc-card-icon { background: var(--accent); }
-.svc-card-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; transition: stroke .25s; }
-.svc-card:hover .svc-card-icon svg { stroke: #fff; }
-.svc-card h3 {
-  font-family: var(--serif); font-size: 1.08rem; font-weight: 700;
-  color: var(--accent); margin-bottom: .5rem; line-height: 1.3;
-}
-.svc-card p { font-size: .85rem; color: var(--body); line-height: 1.8; font-weight: 300; }
-
-@media(min-width:640px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+.svc-card:hover .svc-card-icon { background:var(--accent); }
+.svc-card-icon svg { width:22px; height:22px; stroke:var(--accent); fill:none; transition:stroke .25s; }
+.svc-card:hover .svc-card-icon svg { stroke:#fff; }
+.svc-card h3 { font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--accent); margin-bottom:.4rem; line-height:1.3; }
+.svc-card p { font-size:.84rem; color:var(--body); line-height:1.8; font-weight:300; }
+@media(min-width:640px) { .svc-grid { grid-template-columns:1fr 1fr; } }
 @media(min-width:920px) {
-  .svc-grid { grid-template-columns: repeat(3, 1fr); }
-  .svc-card:nth-child(4) { grid-column: 1; }
-  .svc-card:nth-child(5) { grid-column: 2; }
+  .svc-grid { grid-template-columns:repeat(3,1fr); }
+  .svc-card:nth-child(4) { grid-column:1; }
+  .svc-card:nth-child(5) { grid-column:2; }
 }
-
-/* Desktop 1100px+: literal pentagon wheel matching reference graphic */
+/* Desktop: show SVG wheel, hide card grid */
 @media(min-width:1100px) {
-  .svc-you-banner { display: none; }
-  .svc-wheel .r,
-  .svc-wheel .r.in,
-  .js .svc-wheel .r,
-  .js .svc-wheel .r.in {
-    transform: none !important;
-  }
-  .svc-wheel {
-    position: relative;
-    height: 760px;
-    margin: 1rem auto 0;
-  }
-  .svc-grid { display: contents; }
-
-  /* Connecting arcs + radiating lines, drawn once as background SVG */
-  .svc-wheel-svg {
-    display: block;
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* YOU — dead center */
-  .svc-you-center {
-    display: block;
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-  }
-  .svc-you-center .you-word {
-    font-family: var(--serif); font-size: 3.4rem; font-weight: 700;
-    color: var(--accent); line-height: 1; letter-spacing: .02em;
-  }
-  .svc-you-cta-center {
-    display: inline-block; margin-top: 1.6rem;
-    background: var(--accent); color: #fff;
-    font-family: var(--sans); font-size: .68rem; font-weight: 600;
-    letter-spacing: .08em; text-transform: uppercase;
-    padding: .75rem 1.5rem; border-radius: 2px;
-    white-space: nowrap;
-    transition: background .2s, transform .2s;
-  }
-  .svc-you-cta-center:hover { background: #c96940; transform: translateY(-1px); }
-
-  /* Card positions — absolute, matching reference graphic composition */
-  .svc-card {
-    position: absolute;
-    background: var(--surface);
-    border: none;
-    padding: 0;
-    transition: transform .25s;
-    z-index: 1;
-  }
-  .svc-card::before { display: none; }
-  .svc-card:hover { transform: translateY(-3px); background: transparent; }
-
-  /* 1 — Retirement Planning: raised card directly above YOU */
-  .svc-card:nth-child(1) {
-    top: 0; left: 50%; transform: translateX(-50%) !important;
-    width: 340px;
-    background: var(--surface);
-    box-shadow: 0 16px 40px rgba(88,96,103,.14);
-    border-radius: 6px;
-    padding: 1.8rem 2rem;
-    text-align: center;
-    z-index: 3;
-  }
-  .svc-card:nth-child(1):hover { transform: translateX(-50%) translateY(-3px) !important; }
-  .svc-card:nth-child(1) .svc-card-icon { display: none; }
-
-  /* 2 — Protection Planning: top right */
-  .svc-card:nth-child(2) {
-    top: 250px; right: 0;
-    width: 320px;
-    text-align: left;
-    z-index: 1;
-  }
-  .svc-card:nth-child(2) .svc-card-icon {
-    position: absolute; top: -48px; left: 50%; transform: translateX(-50%);
-    width: 96px; height: 96px; margin: 0;
-    background: var(--bg-alt); border: none;
-    z-index: 2;
-  }
-  .svc-card:nth-child(2) .svc-card-icon svg { width: 36px; height: 36px; }
-
-  /* 3 — Investment Planning: bottom right */
-  .svc-card:nth-child(3) {
-    bottom: 30px; right: 30px;
-    width: 320px;
-    text-align: left;
-    z-index: 1;
-  }
-  .svc-card:nth-child(3) .svc-card-icon {
-    position: absolute; top: -44px; left: 36px;
-    width: 88px; height: 88px; margin: 0;
-    background: var(--bg-alt); border: none;
-    z-index: 2;
-  }
-  .svc-card:nth-child(3) .svc-card-icon svg { width: 34px; height: 34px; }
-
-  /* 4 — Tax Planning: bottom left */
-  .svc-card:nth-child(4) {
-    bottom: 30px; left: 30px;
-    width: 320px;
-    text-align: left;
-    z-index: 1;
-  }
-  .svc-card:nth-child(4) .svc-card-icon {
-    position: absolute; top: -44px; right: 36px;
-    width: 88px; height: 88px; margin: 0;
-    background: var(--bg-alt); border: none;
-    z-index: 2;
-  }
-  .svc-card:nth-child(4) .svc-card-icon svg { width: 34px; height: 34px; }
-
-  /* 5 — Estate Planning: top left */
-  .svc-card:nth-child(5) {
-    top: 250px; left: 0;
-    width: 320px;
-    text-align: left;
-    z-index: 1;
-  }
-  .svc-card:nth-child(5) .svc-card-icon {
-    position: absolute; top: -48px; left: 50%; transform: translateX(-50%);
-    width: 96px; height: 96px; margin: 0;
-    background: var(--bg-alt); border: none;
-    z-index: 2;
-  }
-  .svc-card:nth-child(5) .svc-card-icon svg { width: 36px; height: 36px; }
-
-  .svc-card-icon {
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 14px rgba(88,96,103,.12);
-  }
-  .svc-card-icon svg { stroke: var(--accent); fill: none; stroke-width: 1.5; }
-
-  .svc-card h3 {
-    font-family: var(--serif); font-size: 1.3rem; font-weight: 700;
-    color: var(--accent); margin-bottom: .6rem;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .svc-card h3::after {
-    content: '›'; font-weight: 400; font-size: 1.4rem; line-height: 1;
-  }
-  .svc-card:nth-child(1) h3 { justify-content: center; }
-  .svc-card p { font-size: .92rem; color: var(--heading); line-height: 1.75; font-weight: 400; }
+  .svc-wheel-svg-wrap { display:block; }
+  .svc-grid { display:none; }
 }
-@media(min-width:1300px) { .services-section { padding: 7rem 7%; } }
-
 #about-detail{margin-top:0!important;padding-top:0!important}
 </style>
 </head>
@@ -1311,7 +1137,7 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
   <!-- 01 Client Focused — image LEFT, text RIGHT -->
   <div class="feature flip r">
     <div class="feature-img">
-      <img src="img/img-meeting.jpg"
+      <img src="img/img-transparent.jpg"
            alt="Michael Peterson meeting with a client, fee-based financial advisor in Phoenix AZ" width="700" height="875" loading="lazy" decoding="async"/>
     </div>
     <div class="feature-body">
@@ -1329,8 +1155,8 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
       <p>From our first conversation through every stage of your financial journey, every fee is straightforward and explained in full detail. Serving clients across the Phoenix area, we clearly outline how your assets are being managed &mdash; minimizing surprises and fostering a relationship based on clarity and trust.</p>
     </div>
     <div class="feature-img">
-      <img src="img/meeting-arms.png"
-          alt="Retiree exploring a new city with confidence — fee-based financial planning with Impact Wealth Partners" width="700" height="500" loading="lazy" decoding="async"/>
+      <img src="img/img-lifestyle-explore.jpg"
+           alt="Retiree exploring a new city with confidence — fee-based financial planning with Impact Wealth Partners" width="700" height="500" loading="lazy" decoding="async"/>
     </div>
   </div>
 
@@ -1349,62 +1175,196 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
     <p class="lead" style="margin:0 auto">Five areas of planning working together as one coordinated strategy &mdash; all built around the life you want to live.</p>
   </div>
 
-  <div class="svc-wheel">
-  <div class="svc-you-banner r">
-    <span class="you-word">YOU</span>
-    <a href="contact.html" class="svc-you-cta">Schedule a Call</a>
+  <div class="svc-wheel-svg-wrap r">
+    <svg viewBox="0 0 1100 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Holistic financial planning services built around you: Retirement, Protection, Investment, Tax, and Estate Planning" style="width:100%;height:auto;display:block">
+
+      <!-- ── Connecting arc ── -->
+      <ellipse cx="550" cy="410" rx="320" ry="300" fill="none" stroke="#E28056" stroke-width="1.5" opacity="0.45"/>
+
+      <!-- ── Radiating spokes from YOU center ── -->
+      <g stroke="#586067" stroke-width="1.4" opacity="0.5">
+        <!-- up to Retirement -->
+        <line x1="550" y1="370" x2="550" y2="240"/>
+        <!-- upper-left to Estate -->
+        <line x1="531" y1="379" x2="393" y2="270"/>
+        <!-- lower-left to Tax -->
+        <line x1="524" y1="398" x2="380" y2="520"/>
+        <!-- upper-right to Protection -->
+        <line x1="569" y1="379" x2="707" y2="270"/>
+        <!-- lower-right to Investment -->
+        <line x1="576" y1="398" x2="720" y2="520"/>
+      </g>
+
+      <!-- ══════════════════════════════════════
+           YOU — CENTER
+      ══════════════════════════════════════ -->
+      <text x="550" y="400" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Bodoni Moda', 'Libre Baskerville', Georgia, serif"
+        font-size="72" font-weight="700" fill="#E28056" letter-spacing="4">YOU</text>
+
+      <!-- Schedule a Consultation button under YOU -->
+      <rect x="395" y="432" width="310" height="46" rx="3" fill="#E28056"/>
+      <text x="550" y="461" text-anchor="middle" dominant-baseline="middle"
+        font-family="'DM Sans', Arial, sans-serif"
+        font-size="13" font-weight="600" fill="#ffffff" letter-spacing="1.5">SCHEDULE A CONSULTATION</text>
+      <a href="contact.html" target="_self">
+        <rect x="395" y="432" width="310" height="46" rx="3" fill="transparent"/>
+      </a>
+
+      <!-- ══════════════════════════════════════
+           RETIREMENT PLANNING — TOP CENTER
+      ══════════════════════════════════════ -->
+      <!-- Card background -->
+      <rect x="375" y="42" width="350" height="170" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+      <!-- Icon circle -->
+      <circle cx="550" cy="42" r="38" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <!-- Calendar icon -->
+      <g transform="translate(535,27)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <rect x="0" y="3" width="30" height="26" rx="3"/>
+        <line x1="0" y1="11" x2="30" y2="11"/>
+        <line x1="8" y1="0" x2="8" y2="6"/>
+        <line x1="22" y1="0" x2="22" y2="6"/>
+        <circle cx="15" cy="20" r="3" fill="#E28056" stroke="none"/>
+      </g>
+      <!-- Title -->
+      <text x="550" y="102" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="22" font-weight="700" fill="#E28056">Retirement Planning</text>
+      <!-- Body -->
+      <foreignObject x="385" y="118" width="330" height="90">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;text-align:center;font-weight:300">
+          We help you clearly define your vision for the future &mdash; finding the right balance between living fully today and planning confidently for tomorrow.
+        </div>
+      </foreignObject>
+
+      <!-- ══════════════════════════════════════
+           ESTATE PLANNING — LEFT
+      ══════════════════════════════════════ -->
+      <!-- Icon circle -->
+      <circle cx="168" cy="295" r="40" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <!-- Home icon -->
+      <g transform="translate(153,280)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <polyline points="0,15 15,3 30,15"/>
+        <polyline points="4,15 4,27 12,27 12,21 18,21 18,27 26,27 26,15"/>
+      </g>
+      <!-- Title -->
+      <text x="80" y="360" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="20" font-weight="700" fill="#E28056">Estate Planning</text>
+      <!-- Body -->
+      <foreignObject x="0" y="378" width="230" height="150">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;font-weight:300">
+          We help you craft your estate plan and collaborate with your legal advisors to seamlessly transfer your wealth to the people and causes you care about most.
+        </div>
+      </foreignObject>
+
+      <!-- ══════════════════════════════════════
+           PROTECTION PLANNING — RIGHT
+      ══════════════════════════════════════ -->
+      <!-- Icon circle -->
+      <circle cx="932" cy="295" r="40" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <!-- Shield icon -->
+      <g transform="translate(917,277)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <path d="M15,0 L30,6 L30,18 Q30,28 15,34 Q0,28 0,18 L0,6 Z"/>
+        <polyline points="8,17 13,22 22,12"/>
+      </g>
+      <!-- Title -->
+      <text x="1020" y="360" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="20" font-weight="700" fill="#E28056">Protection Planning</text>
+      <!-- Body -->
+      <foreignObject x="870" y="378" width="230" height="170">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;font-weight:300">
+          We help you identify potential risks and make informed decisions about what to protect with insurance &mdash; and where you may be able to go without coverage.
+        </div>
+      </foreignObject>
+
+      <!-- ══════════════════════════════════════
+           TAX PLANNING — BOTTOM LEFT
+      ══════════════════════════════════════ -->
+      <!-- Icon circle -->
+      <circle cx="250" cy="620" r="40" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <!-- Calculator icon -->
+      <g transform="translate(236,606)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <rect x="0" y="0" width="28" height="28" rx="3"/>
+        <line x1="5" y1="8" x2="23" y2="8"/>
+        <line x1="8" y1="14" x2="12" y2="14"/><line x1="10" y1="12" x2="10" y2="16"/>
+        <rect x="16" y="12" width="6" height="4" rx="1" fill="#E28056" stroke="none"/>
+        <line x1="8" y1="21" x2="12" y2="21"/>
+        <rect x="16" y="19" width="6" height="4" rx="1" fill="#E28056" stroke="none"/>
+      </g>
+      <!-- Title -->
+      <text x="175" y="688" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="20" font-weight="700" fill="#E28056">Tax Planning</text>
+      <!-- Body -->
+      <foreignObject x="30" y="704" width="240" height="120">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;font-weight:300">
+          Nearly every financial decision has a tax component. We work alongside your accountant to help you keep more of what you earn.
+        </div>
+      </foreignObject>
+
+      <!-- ══════════════════════════════════════
+           INVESTMENT PLANNING — BOTTOM RIGHT
+      ══════════════════════════════════════ -->
+      <!-- Icon circle -->
+      <circle cx="850" cy="620" r="40" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <!-- Layers/money icon -->
+      <g transform="translate(835,605)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <polyline points="0,8 15,0 30,8 15,16 0,8"/>
+        <polyline points="0,15 15,23 30,15"/>
+        <polyline points="0,22 15,30 30,22"/>
+      </g>
+      <!-- Title -->
+      <text x="925" y="688" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="20" font-weight="700" fill="#E28056">Investment Planning</text>
+      <!-- Body -->
+      <foreignObject x="830" y="704" width="240" height="120">
+        <div xmlns="http://www.w3.org/1999/xhtml"
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;font-weight:300">
+          Every portfolio is carefully designed around your risk personality and long-term goals using our IMPACT Framework for investing.
+        </div>
+      </foreignObject>
+
+      <!-- Drop shadow filter -->
+      <defs>
+        <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+          <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#586067" flood-opacity="0.12"/>
+        </filter>
+      </defs>
+
+    </svg>
   </div>
 
-  <svg class="svc-wheel-svg" viewBox="0 0 1100 760" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M 235 218 A 330 330 0 0 1 550 60" fill="none" stroke="#E28056" stroke-width="1.5" opacity=".5"/>
-    <path d="M 550 60 A 330 330 0 0 1 865 218" fill="none" stroke="#E28056" stroke-width="1.5" opacity=".5"/>
-    <path d="M 175 590 A 330 330 0 0 0 235 218" fill="none" stroke="#E28056" stroke-width="1.5" opacity=".5"/>
-    <path d="M 865 218 A 330 330 0 0 0 925 590" fill="none" stroke="#E28056" stroke-width="1.5" opacity=".5"/>
-    <g stroke="#586067" stroke-width="1.5" opacity=".55">
-      <line x1="550" y1="320" x2="550" y2="270"/>
-      <line x1="550" y1="460" x2="550" y2="510"/>
-      <line x1="480" y1="335" x2="445" y2="305"/>
-      <line x1="480" y1="445" x2="445" y2="475"/>
-      <line x1="620" y1="335" x2="655" y2="305"/>
-      <line x1="620" y1="445" x2="655" y2="475"/>
-      <line x1="455" y1="390" x2="405" y2="390"/>
-      <line x1="645" y1="390" x2="695" y2="390"/>
-    </g>
-  </svg>
-
-  <div class="svc-you-center">
-    <span class="you-word">YOU</span>
-    <a href="contact.html" class="svc-you-cta-center">Schedule a Consultation</a>
-  </div>
-
+  <!-- Mobile fallback card grid (hidden at desktop) -->
   <div class="svc-grid">
     <div class="svc-card r">
       <div class="svc-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><circle cx="12" cy="14" r="2"/></svg>
       </div>
       <h3>Retirement Planning</h3>
-      <p>We help you clearly define your vision for the future &mdash; finding the right balance between living fully today and planning confidently for tomorrow.</p>
+      <p>We help you clearly define your vision for the future — finding the right balance between living fully today and planning confidently for tomorrow.</p>
     </div>
     <div class="svc-card r d1">
       <div class="svc-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
       </div>
       <h3>Protection Planning</h3>
-      <p>We help you identify potential risks and make informed decisions about what to protect with insurance &mdash; and where you may be able to go without coverage.</p>
+      <p>We help you identify potential risks and make informed decisions about what to protect with insurance — and where you may be able to go without coverage.</p>
     </div>
     <div class="svc-card r d2">
       <div class="svc-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
       <h3>Investment Planning</h3>
-      <p>We take investing seriously. Every portfolio is carefully designed around your risk personality and long-term goals using our IMPACT Framework for investing.</p>
+      <p>We take investing seriously. Every portfolio is carefully designed around your risk personality and long-term goals using our IMPACT Framework.</p>
     </div>
     <div class="svc-card r d3">
       <div class="svc-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
       </div>
       <h3>Tax Planning</h3>
-      <p>Nearly every financial decision has a tax component. We work alongside your accountant to help you keep more of what you earn through smart, proactive strategy.</p>
+      <p>Nearly every financial decision has a tax component. We work alongside your accountant to help you keep more of what you earn.</p>
     </div>
     <div class="svc-card r d4">
       <div class="svc-card-icon">
@@ -1414,7 +1374,7 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
       <p>We help you craft your estate plan and collaborate with your legal advisors to seamlessly transfer your wealth to the people and causes you care about most.</p>
     </div>
   </div>
-  </div>
+
 </section>
 
 <!-- CTA STRIP -->
