@@ -58,7 +58,7 @@
       "description": "Impact Wealth Partners provides fee-based financial planning in Phoenix, AZ \u2014 investment management, retirement planning, Medicare guidance, tax strategy, and estate planning.",
       "priceRange": "$$",
       "telephone": "+1-602-691-0248",
-      "email": "mike@letsimpactwealth.com",
+      "email": "mike@goiwp.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Phoenix",
@@ -84,7 +84,7 @@
           "@id": "https://goiwp.com/#business"
         },
         "telephone": "+1-602-691-0248",
-        "email": "mike@letsimpactwealth.com",
+        "email": "mike@goiwp.com",
         "description": "Fee-based financial advisor with 12+ years of experience in Phoenix, AZ.",
         "knowsAbout": [
           "Financial Planning",
@@ -145,7 +145,7 @@
         ]
       },
       "sameAs": [
-        "https://www.letsimpactwealth.com",
+        "https://www.goiwp.com",
         "https://www.facebook.com/weimpactwealth"
       ]
     },
@@ -251,7 +251,7 @@ ul{list-style:none}
 .nav-panel a:hover{color:var(--accent)}
 
 /* ── HERO ── */
-#hero{display:flex;flex-direction:column}
+#hero{display:flex;flex-direction:column;margin-bottom:0}
 .hero-dark{background:var(--dark);padding:3.5rem 5% 3rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .hero-dark::before{content:'IWP';position:absolute;right:-2%;bottom:-10%;font-family:var(--serif);font-size:18rem;font-weight:700;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.65rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4rem;animation:fadeUp .7s .1s both}
@@ -295,28 +295,27 @@ ul{list-style:none}
 .lead{font-size:.95rem;color:var(--body);line-height:1.85;max-width:620px;font-weight:300}
 
 /* ── VALUE PILLARS ── */
-.pillars{background:var(--dark);padding:4rem 5%;display:grid;grid-template-columns:1fr;gap:2px}
+.pillars{background:linear-gradient(135deg,#4e5760 0%,#586067 50%,#586067 100%);padding:4rem 5%;display:grid;grid-template-columns:1fr;gap:2px}
 .pillar{background:var(--dark-mid);padding:2.2rem 2rem;border-left:2px solid transparent;transition:border-color .3s,background .3s}
 .pillar:hover{border-left-color:var(--accent);background:rgba(255,255,255,.02)}
 .pillar-num{font-family:var(--serif);font-size:.85rem;font-weight:400;color:var(--accent);opacity:.5;display:block;margin-bottom:.7rem;letter-spacing:.1em}
-.pillar h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:#fff;margin-bottom:.5rem}
-.pillar p{font-size:.86rem;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300}
+.pillar h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:#fff;margin-bottom:.3rem}
+.pillar p{font-size:.84rem;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300}
 
 /* ── ALTERNATING EDITORIAL ── */
-.feature{display:flex;flex-direction:column;border-top:1px solid var(--border)}
-.feature-img{order:-1;width:100%;height:52vw;min-height:220px;max-height:360px;overflow:hidden;background:var(--img-fall);position:relative}
+.feature{display:flex;flex-direction:column}
+.feature-img{order:-1;width:100%;height:52vw;min-height:260px;max-height:340px;overflow:hidden;background:var(--img-fall);position:relative}
 .feature-img img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:brightness(.93) saturate(.85);transition:filter .5s,transform .6s}
 .feature:hover .feature-img img{filter:brightness(.97) saturate(.9);transform:scale(1.02)}
-.feature-body{padding:3rem 5%;background:var(--bg);display:flex;flex-direction:column;justify-content:center}
 .feature-body.alt-bg{background:var(--bg-alt)}
-.feature-num{font-family:var(--serif);font-size:3.5rem;font-weight:700;color:var(--accent);opacity:.12;line-height:1;display:block;margin-bottom:.5rem}
+.feature-num{font-family:var(--serif);font-size:3.5rem;font-weight:700;color:var(--accent);opacity:.12;line-height:1;display:none;margin-bottom:.5rem}
 .feature-body h2{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,1.9rem);font-weight:500;color:var(--heading);margin-bottom:.8rem;line-height:1.2}
-.feature-body p{font-size:.9rem;color:var(--body);line-height:1.85;font-weight:300}
+.feature-body p{font-size:.88rem;color:var(--body);line-height:1.8;font-weight:300}
 
 /* ── SERVICES ── */
-.services-section{padding:5rem 5%;background:var(--bg)}
+.services-section{padding:5rem 5%;background:var(--bg-alt)}
 .services-table{margin-top:3rem;border-top:1px solid var(--border)}
-.svc-row{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:1.8rem 0;border-bottom:1px solid var(--border);align-items:start;cursor:default;transition:background .2s;padding-left:.5rem;padding-right:.5rem}
+.svc-row{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--border);align-items:start;cursor:default;transition:background .2s;padding-left:.5rem;padding-right:.5rem}
 .svc-row:hover{background:var(--bg-alt);margin:0 -5%;padding-left:5%;padding-right:5%}
 .svc-idx{font-family:var(--serif);font-size:.82rem;font-weight:400;color:var(--accent);opacity:.6;letter-spacing:.08em;padding-top:.2rem}
 .svc-content h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--heading);margin-bottom:.35rem;display:flex;align-items:center;justify-content:space-between}
@@ -330,19 +329,19 @@ ul{list-style:none}
 .impact-quote{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,2.4rem);font-weight:400;font-style:italic;color:rgba(255,255,255,.85);line-height:1.4;max-width:760px;position:relative}
 .impact-quote em{color:var(--accent);font-style:normal}
 .impact-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);margin-top:3.5rem}
-.istat{background:var(--dark-mid);padding:2rem;text-align:center}
+.istat{background:var(--dark-mid);padding:1.4rem 1.2rem;text-align:center}
 .istat-n{font-family:var(--serif);font-size:2.2rem;font-weight:500;color:var(--accent);display:block;line-height:1}
 .istat-l{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-top:.4rem}
 
 /* ── BENEFITS ── */
 .benefits-section{padding:5rem 5%;background:var(--bg-alt)}
-.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3rem}
+
 .bcard{background:var(--bg);padding:2rem;transition:background .25s}
 .bcard:hover{background:var(--surface)}
 .bcard-img{width:100%;height:160px;overflow:hidden;background:var(--img-fall);margin-bottom:1.2rem}
 .bcard-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) saturate(.82);transition:filter .4s,transform .5s}
 .bcard:hover .bcard-img img{filter:brightness(.96) saturate(.88);transform:scale(1.04)}
-.bcard-img{overflow:hidden}
+
 .bcard h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--heading);margin-bottom:.35rem}
 .bcard p{font-size:.82rem;color:var(--body);line-height:1.78;font-weight:300}
 
@@ -367,19 +366,12 @@ ul{list-style:none}
 .ccard-sub{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:2px}
 
 /* ── FOOTER ── */
-footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
-.footer-logo{height:48px;width:auto;display:block;margin:0 auto 1.4rem}
+footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{height:48px;width:auto;display:block;margin:0 auto 1.4rem;filter:grayscale(100%) brightness(0.55)}
 .footer-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem 1.2rem;margin-bottom:1.2rem}
 .footer-nav a{font-size:.8rem;font-weight:500;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}
 .footer-nav a:hover{opacity:.7}
-.footer-social{display:flex;justify-content:center;gap:.6rem;margin-bottom:1.2rem}
-.fsoc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:all .2s}
-.fsoc:hover{border-color:var(--accent);background:var(--accent)}
-.fsoc svg{width:14px;height:14px;fill:rgba(255,255,255,.5)}
-.fsoc:hover svg{fill:#fff}
-.footer-adv{display:inline-block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.45);padding:.4rem 1.2rem;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem;transition:all .2s}
-.footer-adv:hover{border-color:var(--accent);color:var(--accent)}
-.footer-disc{font-size:.66rem;color:rgba(255,255,255,.28);max-width:680px;margin:0 auto;line-height:1.75}
+..footer-disc{font-size:.66rem;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
 
 /* ── REVEALS ── */
 .r{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
@@ -395,7 +387,7 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
   .feature-img{height:42vw;max-height:420px}
   .impact-stats{grid-template-columns:repeat(4,1fr)}
   .benefits-grid{grid-template-columns:repeat(4,1fr)}
-  .bcard-img{height:140px}
+  
   .sub-form{flex-direction:row;flex-wrap:wrap}
   .sub-form input{flex:1;min-width:140px}
   .sub-form button{align-self:stretch}
@@ -432,7 +424,7 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
   .impact-section{padding:6.5rem 5%}
   .benefits-section{padding:6.5rem 5%}
   .benefits-grid{grid-template-columns:repeat(5,1fr)}
-  .bcard-img{height:180px}
+  
   .bcard:nth-child(even){margin-top:-2.5rem}
   .benefits-grid{align-items:start}
   .contact-section{padding:5.5rem 5%}
@@ -462,9 +454,7 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 .hero-dark,
 .pillars,
 .impact-section,
-.section-dark {
-  position: relative;
-}
+
 .hero-dark::after,
 .pillars::after,
 .impact-section::after {
@@ -481,19 +471,15 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 .impact-section > * { position: relative; z-index: 1; }
 
 /* Richer hero dark gradient */
-.hero-dark {
-  background: radial-gradient(ellipse 80% 100% at 20% 50%, #6b7780 0%, #586067 60%);
-}
+
 
 /* Pillar richer gradient */
-.pillars {
-  background: linear-gradient(135deg, #4e5760 0%, #586067 50%, #586067 100%);
-}
+
 
 /* ── BENEFITS — EDITORIAL NUMBERED ──────────────────────────── */
 .benefits-grid { display: none; } /* hide old grid */
 .benefit-editorial {
-  display: grid;
+  display:none;
   grid-template-columns: 1fr;
   gap: 0;
   margin-top: 3rem;
@@ -577,28 +563,21 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 
 /* ── FEATURE SECTION FIX ─────────────────────────────────── */
 /* On mobile: photo always on top */
-.feature { display: flex; flex-direction: column; }
-.feature-img { order: -1; }
+
 /* On desktop: true alternating via grid */
 @media (min-width: 920px) {
   .feature { display: grid; grid-template-columns: 1fr 1fr; }
   .feature-img { order: 0; } /* resets mobile -1 */
   /* .flip puts image on RIGHT: text (order 0 default) goes left, img (order 1) goes right */
-  .feature.flip .feature-img { order: -1; }
+  .feature.flip 
   .feature.flip .feature-body { order: 0; }
 }
 
 /* ── PILLAR HOVER ─────────────────────────────────────────── */
-.pillar {
-  background: rgba(255,255,255,.02);
-  border-left: 2px solid rgba(255,255,255,.05);
-}
-.pillar:hover { border-left-color: var(--accent); }
 
 
 /* ── BENEFITS MOSAIC ── */
-.benefit-editorial { display: none; }
-.benefits-grid { display: none; }
+
 .ben-mosaic {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -608,7 +587,7 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 }
 .ben-card {
   background: var(--surface);
-  padding: 2.2rem 2rem;
+  padding:1.8rem 1.6rem;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -621,7 +600,7 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 .ben-card.featured {
   grid-column: 1 / -1;
   background: var(--dark);
-  padding: 3rem 2.5rem;
+  padding:2.5rem 2rem;
   flex-direction: row;
   align-items: flex-start;
   gap: 3rem;
@@ -678,22 +657,14 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 }
 
 
-/* ══ COMPACT ALTERNATING SECTIONS (letsimpactwealth.com style) ══ */
+/* ══ COMPACT ALTERNATING SECTIONS ══ */
 
-/* Feature body: tighter padding, like letsimpactwealth.com */
-.feature-body {
-  padding: 2.4rem 5% 2.4rem 5%;
-}
-.feature-body.alt-bg { background: var(--bg-alt); }
+/* Feature body: tighter padding */
+
 
 /* Feature num: remove oversized ghost numbers */
-.feature-num { display: none; }
 
 /* Feature image: shorter, proportional */
-.feature-img {
-  min-height: 260px !important;
-  max-height: 340px !important;
-}
 
 /* Desktop feature overrides */
 @media(min-width:920px){
@@ -724,11 +695,11 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 .section-intro-wrap { margin-bottom: 0; }
 
 /* Tighten pillar at mobile */
-.pillars { padding: 0; gap: 0; }
-.pillar { padding: 2rem 1.8rem; }
+
+
 
 /* Compact hero-dark padding */
-.hero-dark { padding: 3rem 5% 3rem; }
+
 @media(min-width:920px){
   .hero-dark { padding: 0 5% 0 6%; }
 }
@@ -737,14 +708,12 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 }
 
 /* Clean up empty gap between hero and first section */
-#hero { margin-bottom: 0; }
 
 /* Tighten cta-row strips */
-.cta-row { padding: 2rem 5%; }
-.cta-row.alt { padding: 2rem 5%; }
+
 
 /* Tighten contact section */
-.contact-section { padding: 3.5rem 5%; }
+
 @media(min-width:920px){
   .contact-section { padding: 4.5rem 5%; }
 }
@@ -753,26 +722,20 @@ footer{background:var(--dark);padding:3rem 5% 1.8rem;text-align:center}
 }
 
 /* Tighten footer */
-footer { padding: 2.5rem 5% 1.5rem; }
+
 @media(min-width:920px){
   footer { padding: 3rem 5% 1.8rem; }
 }
 
 /* Feature eyebrow: keep but compact it */
-.eyebrow { margin-bottom: 0.5rem; }
 .sec-bar { margin-bottom: 0.8rem; }
-.feature-body h2 { margin-bottom: 0.7rem; }
-.feature-body p { font-size: 0.88rem; line-height: 1.8; }
 
 /* Benefit mosaic cards: slightly more compact */
-.ben-card { padding: 1.8rem 1.6rem; }
-.ben-card.featured { padding: 2.5rem 2rem; }
 
 /* Services table rows: tighter */
-.svc-row { padding: 1.4rem 0; }
 
 /* Impact quote section: compact */
-.impact-section { padding: 3.5rem 5% !important; }
+
 @media(min-width:920px){
   .impact-section { padding: 4.5rem 5% !important; }
 }
@@ -781,265 +744,25 @@ footer { padding: 2.5rem 5% 1.5rem; }
 }
 
 /* Impact stats: compact */
-.impact-stats { margin-top: 2rem; }
-.istat { padding: 1.4rem 1.2rem; }
 
 /* Value pillars gap */
-.pillar-num { margin-bottom: 0.5rem; }
-.pillar h3 { margin-bottom: 0.3rem; }
-.pillar p { font-size: 0.84rem; }
 
 
 /* ── WHITE FOOTER ── */
-footer { background: var(--nav-bg) !important; border-top: 1px solid var(--border); }
-.footer-logo { filter: grayscale(100%) brightness(0.55); }
-.footer-nav a { color: var(--accent) !important; }
-.footer-disc { color: var(--muted) !important; }
-.footer-adv { border-color: var(--border) !important; color: var(--muted) !important; }
-.footer-adv:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
-.fsoc { border-color: var(--border) !important; }
-.fsoc svg { fill: var(--muted) !important; }
-.fsoc:hover { background: var(--accent) !important; }
-.fsoc:hover svg { fill: #fff !important; }
-
 /* ── DARK SECTIONS → USE BRAND GRAY ── */
-.hero-dark, .pillars, .impact-section, .section-dark {
-  background: var(--dark) !important;
-}
-.hero-dark { background: linear-gradient(135deg, #6b7a82 0%, #586067 60%) !important; }
-.pillars { background: var(--dark) !important; }
-.impact-section { background: var(--dark) !important; }
-.contact-section { background: var(--accent) !important; }
+.hero-dark, .pillars, .impact-section, 
+/* hero-dark bg consolidated */
+
+
+
 
 /* ── NAV: light with logo standing out ── */
-#nav { border-bottom: 2px solid var(--accent); }
 
 
 /* ── FOOTER WHITE ── */
-footer { background: #F3F3F1 !important; border-top: 1px solid rgba(88,96,103,0.13) !important; }
-.footer-logo { filter: grayscale(100%) brightness(0.55); }
-.footer-nav a { color: #E28056 !important; }
-.footer-disc { color: #a0aaaf !important; }
-.footer-adv { color: #a0aaaf !important; border-color: rgba(88,96,103,0.2) !important; }
-.footer-adv:hover { border-color: #E28056 !important; color: #E28056 !important; }
-.fsoc { border-color: rgba(88,96,103,0.2) !important; }
-.fsoc svg { fill: #a0aaaf !important; }
-.fsoc:hover { background: #E28056 !important; }
-.fsoc:hover svg { fill: #fff !important; }
-
-
 .r{opacity:1;transform:none}.js .r{opacity:0;transform:translateY(18px)}.js .r.in{opacity:1;transform:none}
 
-/* ═══ BRAND COLOR OVERRIDES ═══ */
-:root {
-  --dark:       #586067;
-  --dark-mid:   #6b7780;
-  --dark-deep:  #434d54;
-  --heading:    #586067;
-  --body:       #7a8890;
-  --muted:      #a4adb3;
-  --accent:     #E28056;
-  --accent-dk:  #c96a42;
-  --accent-lt:  rgba(226,128,86,0.10);
-  --bg:         #F3F3F1;
-  --bg-alt:     #EAEAE8;
-  --surface:    #ffffff;
-  --border:     rgba(88,96,103,0.13);
-  --nav-bg:     #F3F3F1;
-  --nav-text:   #586067;
-  --footer-bg:  #F3F3F1;
-  --serif:      'Bodoni Moda', 'Bodoni Moda Fallback',  Georgia, serif;
-  --sans:       'DM Sans', 'DM Sans Fallback', Arial, sans-serif;
-}
-
-/* Hero dark → brand gray gradient */
-.hero-dark {
-  background: linear-gradient(135deg, #6b7780 0%, #586067 100%) !important;
-  backdrop-filter: none;
-}
-/* Pillar strip → solid brand gray */
-.pillars {
-  background: #586067 !important;
-}
-/* Impact section → brand gray */
-.impact-section {
-  background: #586067 !important;
-}
-/* Contact section stays orange */
-.contact-section {
-  background: var(--accent) !important;
-}
-/* All dark section text */
-.hero-dark h1, .hero-dark p { color: rgba(255,255,255,0.92); }
-.pillars .pillar-num { color: var(--accent); opacity: 0.6; }
-.pillars .pillar h3 { color: #fff; }
-.pillars .pillar p  { color: rgba(255,255,255,0.65); }
-.impact-section .impact-quote { color: rgba(255,255,255,0.88); }
-.impact-section .istat-n { color: var(--accent); }
-.impact-section .istat-l { color: rgba(255,255,255,0.5); }
-.impact-section .istat { background: rgba(0,0,0,0.12); }
-
-/* Headings: ensure Bodoni throughout */
-h1, h2, h3, h4,
-.display, .sec-h,
-.impact-quote,
-.contact-heading,
-.page-hero h1,
-.fees-hero h1,
-.about-content h2 {
-  font-family: var(--serif) !important;
-}
-
-/* Eyebrow / labels */
-.eyebrow, .sec-label { color: var(--accent); letter-spacing: 0.2em; }
-
-/* Button improvements */
-.btn-dark {
-  background: var(--dark) !important;
-  color: #fff !important;
-  border: none !important;
-  transition: background 0.22s, transform 0.18s !important;
-}
-.btn-dark:hover {
-  background: var(--accent) !important;
-  transform: translateY(-1px) !important;
-}
-.btn-line {
-  border-bottom-color: rgba(255,255,255,0.5) !important;
-  color: rgba(255,255,255,0.88) !important;
-}
-.btn-line:hover { border-bottom-color: var(--accent) !important; color: var(--accent) !important; }
-.btn-accent-line {
-  border-bottom-color: var(--accent) !important;
-  color: var(--dark) !important;
-}
-.btn-accent-line:hover { color: var(--accent) !important; }
-
-/* Feature sections: ensure bg colors correct */
-.feature-body { background: var(--bg) !important; }
-.feature-body.alt-bg { background: var(--bg-alt) !important; }
-
-/* Service cards */
-.service-item, .svc-card, .ben-card { background: var(--surface) !important; }
-.service-item:hover, .svc-card:hover { background: var(--bg-alt) !important; }
-
-/* Nav: brand orange accent line, logo display */
-#nav {
-  background: var(--nav-bg) !important;
-  border-bottom: 2px solid var(--accent) !important;
-  box-shadow: none;
-}
-#nav.scrolled { box-shadow: 0 2px 20px rgba(88,96,103,0.15) !important; }
-.nav-logo img { height: 52px !important; }
-.nav-links li a { color: var(--nav-text) !important; font-weight: 600; }
-.nav-links li a:hover, .nav-links li a[aria-current=page] { color: var(--accent) !important; }
-.nav-pill {
-  border: 1.5px solid var(--dark) !important;
-  color: var(--dark) !important;
-  padding: 0.4rem 1.1rem !important;
-}
-.nav-pill:hover {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-}
-
-/* Footer: clean white with gray */
-footer {
-  background: var(--bg) !important;
-  border-top: 1px solid var(--border) !important;
-}
-footer .footer-nav a { color: var(--accent) !important; }
-footer .footer-disc  { color: var(--muted) !important; font-size: 0.68rem; }
-footer .footer-adv   { color: var(--muted) !important; border-color: var(--border) !important; }
-footer .footer-adv:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
-footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
-
-/* Impact stats bar: 3 equal cards */
-.impact-stats {
-  margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.1);
-}
-.istat {
-  padding: 1.6rem 1.5rem;
-  text-align: center;
-  background: rgba(0,0,0,0.08);
-}
-.istat-n {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--accent);
-}
-.istat-l {
-  display: block;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-top: 4px;
-}
-
-/* Section spacing improvements */
-.section, .services-section, .benefits-section { padding: 5rem 5%; }
-.process-section, .why-section, .comparison-section { padding: 5rem 5%; }
-@media(min-width:920px){
-  .section, .services-section, .benefits-section { padding: 6.5rem 5%; }
-}
-@media(min-width:1200px){
-  .section, .services-section, .benefits-section { padding: 7rem 7%; }
-  .hero-dark { padding: 0 5% 0 7%; }
-  #nav { padding: 0 7%; }
-  footer { padding: 3.5rem 7% 2rem; }
-}
-
-/* Cta rows */
-.cta-row {
-  padding: 2.5rem 5%;
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cta-row.alt { background: var(--bg-alt); }
-
-/* Ben-card featured dark card → brand gray */
-.ben-card.featured { background: var(--dark) !important; }
-.ben-card.featured:hover { background: var(--dark-mid) !important; }
-
-/* Page hero (about/fees subpages) */
-.page-hero, .fees-hero {
-  background: linear-gradient(135deg, #6b7780 0%, #586067 100%) !important;
-}
-
-
-/* ── 4-card ben-mosaic 2×2 ── */
-.ben-mosaic { display: grid; grid-template-columns: 1fr; gap: 2px; background: var(--border); }
-.ben-card { background: var(--surface); padding: 2.2rem 2rem; position: relative;
-             overflow: hidden; transition: background .28s; }
-.ben-card:hover { background: var(--bg-alt); }
-.ben-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px;
-                    background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
-.ben-card:hover::before { transform:scaleX(1); }
-.ben-card-accent { width:28px; height:3px; background:var(--accent); margin-bottom:.9rem; }
-.ben-card-body h3 { font-family:var(--serif); font-size:1.1rem; font-weight:700;
-                    color:var(--heading); margin-bottom:.5rem; }
-.ben-card-body p { font-size:.85rem; color:var(--body); line-height:1.82; font-weight:300; }
-.ben-card-tag { display:inline-block; margin-top:.9rem; font-size:.58rem; font-weight:700;
-                letter-spacing:.16em; text-transform:uppercase; color:var(--accent);
-                border:1px solid var(--accent-lt); padding:.2rem .6rem; background:var(--accent-lt); }
-@media(min-width:640px)  { .ben-mosaic { grid-template-columns: 1fr 1fr; } }
-@media(min-width:1200px) { .ben-mosaic { grid-template-columns: 1fr 1fr; } }
-
-
 /* ══ SERVICES (GRID) ══ */
-.services-section { background: var(--bg-alt); }
 
 /* Service cards */
 /* ══ SERVICES WHEEL ══ */
@@ -1047,9 +770,10 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+
+display:none;
 }
 /* Mobile: hide SVG wheel, show card grid */
-.svc-wheel-svg-wrap { display: none; }
 .svc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1092,7 +816,7 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
   .svc-wheel-svg-wrap { display:block; }
   .svc-grid { display:none; }
 }
-#about-detail{margin-top:0!important;padding-top:0!important}
+#about-detail{margin-top:0;padding-top:0}
 </style>
 </head>
 
@@ -1214,12 +938,10 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
       <!-- ══════════════════════════════════════
            RETIREMENT PLANNING — TOP CENTER
       ══════════════════════════════════════ -->
-      <!-- Card background -->
-      <rect x="375" y="42" width="350" height="170" rx="8" fill="#ffffff" filter="url(#shadow)"/>
       <!-- Icon circle -->
-      <circle cx="550" cy="42" r="38" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
+      <circle cx="550" cy="62" r="40" fill="#F5ECE6" stroke="#E28056" stroke-width="1.5"/>
       <!-- Calendar icon -->
-      <g transform="translate(535,27)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
+      <g transform="translate(535,47)" stroke="#E28056" stroke-width="1.5" stroke-linecap="round" fill="none">
         <rect x="0" y="3" width="30" height="26" rx="3"/>
         <line x1="0" y1="11" x2="30" y2="11"/>
         <line x1="8" y1="0" x2="8" y2="6"/>
@@ -1227,13 +949,13 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
         <circle cx="15" cy="20" r="3" fill="#E28056" stroke="none"/>
       </g>
       <!-- Title -->
-      <text x="550" y="102" text-anchor="middle"
-        font-family="'Bodoni Moda', Georgia, serif" font-size="22" font-weight="700" fill="#E28056">Retirement Planning</text>
+      <text x="550" y="124" text-anchor="middle"
+        font-family="'Bodoni Moda', Georgia, serif" font-size="20" font-weight="700" fill="#E28056">Retirement Planning</text>
       <!-- Body -->
-      <foreignObject x="385" y="118" width="330" height="90">
+      <foreignObject x="390" y="140" width="320" height="90">
         <div xmlns="http://www.w3.org/1999/xhtml"
-          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;text-align:center;font-weight:300">
-          We help you clearly define your vision for the future &mdash; finding the right balance between living fully today and planning confidently for tomorrow.
+          style="font-family:'DM Sans',Arial,sans-serif;font-size:13px;color:#7a8890;line-height:1.7;font-weight:300;text-align:center">
+          We help you clearly define your vision for the future — finding the right balance between living fully today and planning confidently for tomorrow.
         </div>
       </foreignObject>
 
@@ -1458,9 +1180,12 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
           <div class="ccard-sub">Phoenix, AZ &mdash; Arizona Office</div>
         </div>
         <div class="ccard">
-          <span class="ccard-lbl">Email</span>
-          <a href="mailto:mike@letsimpactwealth.com" itemprop="email">mike@letsimpactwealth.com</a>
-          <div class="ccard-sub">Michael &amp; Jill Peterson, Co-Founders</div>
+          <span class="ccard-lbl">Mike</span>
+          <a href="mailto:mike@goiwp.com" itemprop="email">mike@goiwp.com</a>
+        </div>
+        <div class="ccard">
+          <span class="ccard-lbl">Jill</span>
+          <a href="mailto:jill@goiwp.com" itemprop="email">jill@goiwp.com</a>
         </div>
       </div>
     </div>
@@ -1473,16 +1198,11 @@ footer .footer-logo  { filter: none !important; height: 52px; width: auto; }
   <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="services.html">Services</a>
     <a href="fees.html">Fees</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="footer-social">
-    <a href="https://facebook.com/weimpactwealth" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-    </a>
-  </div>
-  <a href="#" class="footer-adv">ADV Form</a>
-  <p class="footer-disc"><em>Securities and investment advisory services offered through registered channels. Impact Wealth Partners is a Registered Investment Advisor. All written content is for informational purposes only. All information or ideas provided should be discussed in detail with an advisor, accountant or legal counsel prior to implementation.</em></p>
+<p class="footer-disc"><em>Securities and investment advisory services offered through registered channels. Impact Wealth Partners is a Registered Investment Advisor. All written content is for informational purposes only. All information or ideas provided should be discussed in detail with an advisor, accountant or legal counsel prior to implementation.</em></p>
 </footer>
 
 <script>
