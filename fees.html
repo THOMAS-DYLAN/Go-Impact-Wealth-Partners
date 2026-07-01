@@ -402,7 +402,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .footer-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem 1.2rem;margin-bottom:1.2rem}
 .footer-nav a{font-size:.8rem;font-weight:500;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}
 .footer-nav a:hover{opacity:.7}
-..footer-disc{font-size:.66rem;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
+.footer-disc{font-size:.66rem;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
 
 /* ── REVEALS ── */
 .r{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
@@ -481,11 +481,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 
 /* ── DEPTH & TEXTURE ─────────────────────────────────────── */
-/* Grain overlay on dark sections */
-.hero-dark,
-.pillars,
-.impact-section,
-
+/* Grain overlay on dark sections — pseudo-elements only */
 .hero-dark::after,
 .pillars::after,
 .impact-section::after {
@@ -870,14 +866,6 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 /* Value pillars gap */
 
 
-/* ── WHITE FOOTER ── */
-/* ── DARK SECTIONS → USE BRAND GRAY ── */
-.hero-dark, .pillars, .impact-section, 
-/* hero-dark bg consolidated */
-
-
-
-
 /* ── NAV: light with logo standing out ── */
 
 
@@ -928,6 +916,8 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .fee-bullets{margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
 .fee-bullet{display:flex;align-items:flex-start;gap:.8rem;font-size:.87rem;color:rgba(255,255,255,.65);line-height:1.6;font-weight:300}
 .fee-bullet::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.45rem}
+
+.fees-pullquote{margin-top:2.5rem;padding:1.8rem 2rem;border-left:3px solid var(--accent);background:rgba(255,255,255,.06);font-family:var(--serif);font-size:clamp(1.2rem,2.8vw,1.7rem);font-weight:400;font-style:italic;color:#fff;line-height:1.45;quotes:none}
 
 .adv-section{padding:3.5rem 5%;background:var(--bg-alt);text-align:center}
 @media(min-width:920px){.adv-section{padding:5rem 5%}}
@@ -1017,7 +1007,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
       <div class="fee-bullet">Integration with collaborative professionals (attorneys, tax professionals, and more)</div>
       <div class="fee-bullet">Regular strategy meetings</div>
     </div>
-    <p style="margin-top:1.8rem;font-weight:500;color:#fff">Retirement isn&rsquo;t just about investments. It&rsquo;s about coordinating every financial decision that affects your future.</p>
+    <blockquote class="fees-pullquote">Retirement isn&rsquo;t just about investments. It&rsquo;s about coordinating every financial decision that affects your future.</blockquote>
   </div>
 </section>
 

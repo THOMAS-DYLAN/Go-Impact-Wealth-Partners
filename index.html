@@ -371,7 +371,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .footer-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem 1.2rem;margin-bottom:1.2rem}
 .footer-nav a{font-size:.8rem;font-weight:500;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}
 .footer-nav a:hover{opacity:.7}
-..footer-disc{font-size:.66rem;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
+.footer-disc{font-size:.66rem;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
 
 /* ── REVEALS ── */
 .r{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
@@ -450,11 +450,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 
 /* ── DEPTH & TEXTURE ─────────────────────────────────────── */
-/* Grain overlay on dark sections */
-.hero-dark,
-.pillars,
-.impact-section,
-
+/* Grain overlay on dark sections — pseudo-elements only */
 .hero-dark::after,
 .pillars::after,
 .impact-section::after {
@@ -748,14 +744,6 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 /* Value pillars gap */
 
 
-/* ── WHITE FOOTER ── */
-/* ── DARK SECTIONS → USE BRAND GRAY ── */
-.hero-dark, .pillars, .impact-section, 
-/* hero-dark bg consolidated */
-
-
-
-
 /* ── NAV: light with logo standing out ── */
 
 
@@ -826,6 +814,7 @@ display:none;
   <ul class="nav-links">
     <li><a href="index.html" aria-current="page">Home</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="fees.html">Fees</a></li>
     <li><a href="contact.html" class="nav-pill">Contact</a></li>
   </ul>
@@ -836,6 +825,7 @@ display:none;
 <div class="nav-panel" id="npanel" aria-hidden="true" role="dialog" aria-modal="true" inert>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
+  <a href="services.html">Services</a>
   <a href="fees.html">Fees</a>
   <a href="contact.html">Contact</a>
 </div>
