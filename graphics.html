@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services Wheel — Design Concepts | Impact Wealth Partners</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=DM+Sans:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=DM+Sans:wght@300;400;600&display=swap"></noscript>
+<style>
+:root {
+  --bg:       #F3F3F1;
+  --bg-alt:   #EAEAE8;
+  --surface:  #ffffff;
+  --dark:     #586067;
+  --heading:  #586067;
+  --body:     #7a8890;
+  --muted:    #a0aaaf;
+  --accent:   #E28056;
+  --accent-dk:#c96a42;
+  --border:   rgba(88,96,103,0.13);
+  --serif:    'Bodoni Moda','Bodoni Moda Fallback',Georgia,serif;
+  --sans:     'DM Sans','DM Sans Fallback',Arial,sans-serif;
+}
+@font-face{font-family:'Bodoni Moda Fallback';src:local('Georgia');size-adjust:102%;ascent-override:93%;descent-override:25%}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial');size-adjust:100%;ascent-override:95%;descent-override:20%}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-weight:300;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ── PAGE HEADER ── */
+.page-hdr{
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;background:var(--surface);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100
+}
+.page-hdr-logo{
+  font-family:var(--serif);font-size:.88rem;font-weight:700;color:var(--dark);
+  letter-spacing:.02em
+}
+.page-hdr-back{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--body);transition:color .2s
+}
+.page-hdr-back::before{content:'←';font-size:.85rem}
+.page-hdr-back:hover{color:var(--accent)}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:var(--dark);padding:5rem 5% 4.5rem;overflow:hidden;position:relative
+}
+.page-hero::before{
+  content:'WHEEL';position:absolute;right:-2%;bottom:-15%;
+  font-family:var(--serif);font-size:18rem;font-weight:700;
+  color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none
+}
+.page-hero-eyebrow{
+  font-size:.65rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:1rem
+}
+.page-hero h1{
+  font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:500;
+  color:#fff;line-height:1.1;margin-bottom:1rem
+}
+.page-hero h1 em{font-style:italic;color:var(--accent)}
+.page-hero p{
+  font-size:.9rem;line-height:1.85;color:rgba(255,255,255,.6);
+  max-width:560px;font-weight:300
+}
+
+/* ── VARIANT SECTIONS ── */
+.variant{padding:5rem 5%;border-bottom:1px solid var(--border)}
+.variant:nth-child(odd){background:var(--surface)}
+.variant:nth-child(even){background:var(--bg)}
+
+.variant-header{
+  display:flex;align-items:flex-start;gap:2rem;margin-bottom:3rem;
+  max-width:760px
+}
+.variant-num{
+  font-family:var(--serif);font-size:4rem;font-weight:700;
+  color:var(--accent);opacity:.18;line-height:1;flex-shrink:0;margin-top:-.3rem
+}
+.variant-info{flex:1}
+.eyebrow{
+  font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:.5rem
+}
+.variant-title{
+  font-family:var(--serif);font-size:1.6rem;font-weight:700;
+  color:var(--heading);margin-bottom:.5rem;line-height:1.15
+}
+.variant-desc{
+  font-size:.86rem;color:var(--body);line-height:1.8;font-weight:300;
+  max-width:520px
+}
+
+.svg-card{
+  background:var(--surface);border:1px solid var(--border);
+  padding:2.5rem 2rem;max-width:960px;margin:0 auto
+}
+.svg-card svg{width:100%;height:auto;display:block}
+
+/* ── PAGE FOOTER ── */
+.page-foot{
+  background:var(--dark);padding:2.5rem 5%;
+  display:flex;align-items:center;justify-content:space-between
+}
+.page-foot-logo{
+  font-family:var(--serif);font-size:.88rem;color:rgba(255,255,255,.4);font-weight:700
+}
+.page-foot-link{
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);transition:color .2s;display:flex;align-items:center;gap:.4rem
+}
+.page-foot-link:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-hdr">
+  <span class="page-hdr-logo">Impact Wealth Partners</span>
+  <a href="index.html" class="page-hdr-back">Back to Site</a>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <span class="page-hero-eyebrow">Design Reference — Internal</span>
+  <h1>Services Wheel<br><em>Concepts</em></h1>
+  <p>Five alternative renderings of the holistic planning wheel. Each explores a distinct visual language while preserving the same brand identity, service structure, and YOU-centered philosophy.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     V1 — ORBIT
+     Single thin ring. Service dots sit on the orbit.
+     Short spoke lines radiate inward to YOU.
+═══════════════════════════════════════════ -->
+<section class="variant">
+  <div class="variant-header">
+    <div class="variant-num">01</div>
+    <div class="variant-info">
+      <span class="eyebrow">Variant One</span>
+      <h2 class="variant-title">Orbit</h2>
+      <p class="variant-desc">A single thin circle carries the five services. Dots sit directly on the ring; short spokes draw the eye inward to YOU at center. The most restrained of the five — every mark earns its place.</p>
+    </div>
+  </div>
+  <div class="svg-card">
+    <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Orbit variant: Retirement, Protection, Investment, Tax, and Estate Planning arranged on a circle around YOU at center">
+
+      <!-- Orbit ring -->
+      <circle cx="450" cy="310" r="188" fill="none" stroke="#E28056" stroke-width="0.9" opacity="0.3"/>
+
+      <!-- Spokes: center outward to each dot -->
+      <g stroke="#586067" stroke-width="0.7" opacity="0.22">
+        <line x1="450" y1="310" x2="450" y2="122"/>
+        <line x1="450" y1="310" x2="629" y2="252"/>
+        <line x1="450" y1="310" x2="561" y2="457"/>
+        <line x1="450" y1="310" x2="339" y2="457"/>
+        <line x1="450" y1="310" x2="271" y2="252"/>
+      </g>
+
+      <!-- Center point -->
+      <circle cx="450" cy="310" r="2.5" fill="#E28056" opacity="0.6"/>
+
+      <!-- YOU -->
+      <text x="450" y="305" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="64" font-weight="700" fill="#E28056" letter-spacing="3">YOU</text>
+      <text x="450" y="342" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9" font-weight="600" fill="#a0aaaf" letter-spacing="3">YOUR PLAN · YOUR TERMS</text>
+
+      <!-- Service dots on orbit -->
+      <circle cx="450" cy="122" r="5.5" fill="#E28056"/>
+      <circle cx="629" cy="252" r="5.5" fill="#E28056"/>
+      <circle cx="561" cy="457" r="5.5" fill="#E28056"/>
+      <circle cx="339" cy="457" r="5.5" fill="#E28056"/>
+      <circle cx="271" cy="252" r="5.5" fill="#E28056"/>
+
+      <!-- Short connector lines: dot → label -->
+      <g stroke="#E28056" stroke-width="0.6" opacity="0.5">
+        <line x1="450" y1="116" x2="450" y2="70"/>
+        <line x1="635" y1="248" x2="672" y2="220"/>
+        <line x1="567" y1="460" x2="594" y2="490"/>
+        <line x1="333" y1="460" x2="306" y2="490"/>
+        <line x1="265" y1="248" x2="228" y2="220"/>
+      </g>
+
+      <!-- RETIREMENT — top -->
+      <text x="450" y="57" text-anchor="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Retirement Planning</text>
+      <text x="450" y="74" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Balance today with tomorrow</text>
+
+      <!-- PROTECTION — upper right -->
+      <text x="678" y="216" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Protection Planning</text>
+      <text x="678" y="233" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Protect what matters most</text>
+
+      <!-- INVESTMENT — lower right -->
+      <text x="598" y="497" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Investment Planning</text>
+      <text x="598" y="514" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">The IMPACT Framework</text>
+
+      <!-- TAX — lower left -->
+      <text x="302" y="497" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Tax Planning</text>
+      <text x="302" y="514" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Keep more of what you earn</text>
+
+      <!-- ESTATE — upper left -->
+      <text x="222" y="216" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Estate Planning</text>
+      <text x="222" y="233" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Secure your legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     V2 — BARE SPOKES
+     No ring. Pure lines only. Square endpoints.
+     Sans-serif type. Open and airy.
+═══════════════════════════════════════════ -->
+<section class="variant">
+  <div class="variant-header">
+    <div class="variant-num">02</div>
+    <div class="variant-info">
+      <span class="eyebrow">Variant Two</span>
+      <h2 class="variant-title">Bare Spokes</h2>
+      <p class="variant-desc">No ring — just five lines radiating from YOU. Each spoke ends in a small accent square. Sans-serif type throughout for a more contemporary, open feel. The absence of the circle makes the center feel more deliberate.</p>
+    </div>
+  </div>
+  <div class="svg-card">
+    <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Bare Spokes variant: five radial lines from YOU to each service">
+
+      <!-- Five spokes — full length, no ring -->
+      <g stroke="#586067" stroke-width="0.9" opacity="0.3">
+        <line x1="450" y1="310" x2="450" y2="72"/>
+        <line x1="450" y1="310" x2="676" y2="226"/>
+        <line x1="450" y1="310" x2="591" y2="500"/>
+        <line x1="450" y1="310" x2="309" y2="500"/>
+        <line x1="450" y1="310" x2="224" y2="226"/>
+      </g>
+
+      <!-- Small accent tick marks at center on each spoke (inner ring suggestion) -->
+      <g stroke="#E28056" stroke-width="0.6" opacity="0.4">
+        <line x1="450" y1="252" x2="450" y2="240"/>
+        <line x1="616" y1="266" x2="608" y2="259"/>
+        <line x1="540" y1="431" x2="534" y2="440"/>
+        <line x1="360" y1="431" x2="366" y2="440"/>
+        <line x1="284" y1="266" x2="292" y2="259"/>
+      </g>
+
+      <!-- Square endpoints -->
+      <rect x="446" y="62" width="8" height="8" fill="#E28056" rx="1"/>
+      <rect x="672" y="222" width="8" height="8" fill="#E28056" rx="1"/>
+      <rect x="587" y="496" width="8" height="8" fill="#E28056" rx="1"/>
+      <rect x="305" y="496" width="8" height="8" fill="#E28056" rx="1"/>
+      <rect x="220" y="222" width="8" height="8" fill="#E28056" rx="1"/>
+
+      <!-- YOU — center, sans-serif this time -->
+      <circle cx="450" cy="310" r="48" fill="none" stroke="#586067" stroke-width="0.6" opacity="0.15"/>
+      <text x="450" y="305" text-anchor="middle" dominant-baseline="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="42" font-weight="600" fill="#586067" letter-spacing="6">YOU</text>
+      <text x="450" y="331" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="8" font-weight="400" fill="#a0aaaf" letter-spacing="2.5">AT THE CENTER</text>
+
+      <!-- RETIREMENT -->
+      <text x="450" y="47" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="13" font-weight="600" fill="#586067" letter-spacing=".5">RETIREMENT PLANNING</text>
+      <text x="450" y="63" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Balance today with tomorrow</text>
+
+      <!-- PROTECTION -->
+      <text x="688" y="216" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="13" font-weight="600" fill="#586067" letter-spacing=".5">PROTECTION PLANNING</text>
+      <text x="688" y="232" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Protect what matters most</text>
+
+      <!-- INVESTMENT -->
+      <text x="600" y="494" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="13" font-weight="600" fill="#586067" letter-spacing=".5">INVESTMENT PLANNING</text>
+      <text x="600" y="510" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">The IMPACT Framework</text>
+
+      <!-- TAX -->
+      <text x="300" y="494" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="13" font-weight="600" fill="#586067" letter-spacing=".5">TAX PLANNING</text>
+      <text x="300" y="510" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Keep more of what you earn</text>
+
+      <!-- ESTATE -->
+      <text x="212" y="216" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="13" font-weight="600" fill="#586067" letter-spacing=".5">ESTATE PLANNING</text>
+      <text x="212" y="232" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Secure your legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     V3 — PENTAGON FRAME
+     Pentagon outline + center spokes.
+     Geometric, analytical, precise.
+═══════════════════════════════════════════ -->
+<section class="variant">
+  <div class="variant-header">
+    <div class="variant-num">03</div>
+    <div class="variant-info">
+      <span class="eyebrow">Variant Three</span>
+      <h2 class="variant-title">Pentagon Frame</h2>
+      <p class="variant-desc">The five services are connected by a pentagon outline, then anchored inward to YOU by spokes. The frame makes every service feel equal and interrelated. Precise and architectural — no element floats freely.</p>
+    </div>
+  </div>
+  <div class="svg-card">
+    <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Pentagon Frame variant: services at pentagon vertices connected by outline and spokes to YOU">
+
+      <!-- Pentagon outline -->
+      <path d="M450,122 L629,252 L561,457 L339,457 L271,252 Z"
+        fill="none" stroke="#586067" stroke-width="0.9" opacity="0.25"/>
+
+      <!-- Inner spokes: center to each vertex -->
+      <g stroke="#E28056" stroke-width="0.7" opacity="0.35">
+        <line x1="450" y1="310" x2="450" y2="122"/>
+        <line x1="450" y1="310" x2="629" y2="252"/>
+        <line x1="450" y1="310" x2="561" y2="457"/>
+        <line x1="450" y1="310" x2="339" y2="457"/>
+        <line x1="450" y1="310" x2="271" y2="252"/>
+      </g>
+
+      <!-- Vertex dots -->
+      <circle cx="450" cy="122" r="4" fill="#E28056"/>
+      <circle cx="629" cy="252" r="4" fill="#E28056"/>
+      <circle cx="561" cy="457" r="4" fill="#E28056"/>
+      <circle cx="339" cy="457" r="4" fill="#E28056"/>
+      <circle cx="271" cy="252" r="4" fill="#E28056"/>
+
+      <!-- Center YOU -->
+      <circle cx="450" cy="310" r="4" fill="#586067" opacity="0.4"/>
+      <text x="450" y="304" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="60" font-weight="700" fill="#E28056" letter-spacing="3">YOU</text>
+      <text x="450" y="340" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9" fill="#a0aaaf" letter-spacing="2.5">PLAN · PROTECT · GROW</text>
+
+      <!-- RETIREMENT — top  -->
+      <text x="450" y="80" text-anchor="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Retirement Planning</text>
+      <text x="450" y="97" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Balance today with tomorrow</text>
+
+      <!-- PROTECTION — upper right -->
+      <text x="643" y="228" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Protection</text>
+      <text x="643" y="246" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Planning</text>
+      <text x="643" y="263" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Protect what matters</text>
+
+      <!-- INVESTMENT — lower right -->
+      <text x="571" y="485" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Investment</text>
+      <text x="571" y="502" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Planning</text>
+      <text x="571" y="519" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">The IMPACT Framework</text>
+
+      <!-- TAX — lower left -->
+      <text x="329" y="485" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Tax Planning</text>
+      <text x="329" y="502" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Keep more of what you earn</text>
+
+      <!-- ESTATE — upper left -->
+      <text x="257" y="228" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Estate</text>
+      <text x="257" y="246" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Planning</text>
+      <text x="257" y="263" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Secure your legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     V4 — THREE RINGS
+     Concentric rings. No spokes.
+     Scientific, layered, minimal.
+═══════════════════════════════════════════ -->
+<section class="variant">
+  <div class="variant-header">
+    <div class="variant-num">04</div>
+    <div class="variant-info">
+      <span class="eyebrow">Variant Four</span>
+      <h2 class="variant-title">Three Rings</h2>
+      <p class="variant-desc">Three concentric rings replace the spoke model entirely. YOU lives inside the innermost. The middle ring is decorative. Services sit on the outer ring. No spokes — the rings do all the organizing. Feels more like a solar system than a diagram.</p>
+    </div>
+  </div>
+  <div class="svg-card">
+    <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Three Rings variant: YOU inside innermost ring, services on outer ring">
+
+      <!-- Outer ring -->
+      <circle cx="450" cy="310" r="190" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.28"/>
+      <!-- Middle ring (dashed) -->
+      <circle cx="450" cy="310" r="125" fill="none" stroke="#E28056" stroke-width="0.5" opacity="0.18"
+        stroke-dasharray="4 6"/>
+      <!-- Inner ring -->
+      <circle cx="450" cy="310" r="62" fill="none" stroke="#E28056" stroke-width="1" opacity="0.35"/>
+      <!-- Innermost fill — very subtle -->
+      <circle cx="450" cy="310" r="62" fill="#E28056" opacity="0.04"/>
+
+      <!-- Tick marks on outer ring at each service position -->
+      <!-- Retirement (top, 270°) -->
+      <line x1="450" y1="120" x2="450" y2="106" stroke="#E28056" stroke-width="1.2"/>
+      <!-- Protection (upper-right, 342°) -->
+      <line x1="631" y1="252" x2="641" y2="241" stroke="#E28056" stroke-width="1.2"/>
+      <!-- Investment (lower-right, 54°) -->
+      <line x1="562" y1="457" x2="570" y2="469" stroke="#E28056" stroke-width="1.2"/>
+      <!-- Tax (lower-left, 126°) -->
+      <line x1="338" y1="457" x2="330" y2="469" stroke="#E28056" stroke-width="1.2"/>
+      <!-- Estate (upper-left, 198°) -->
+      <line x1="269" y1="252" x2="259" y2="241" stroke="#E28056" stroke-width="1.2"/>
+
+      <!-- Service dots on outer ring -->
+      <circle cx="450" cy="120" r="4.5" fill="#E28056"/>
+      <circle cx="631" cy="252" r="4.5" fill="#E28056"/>
+      <circle cx="562" cy="457" r="4.5" fill="#E28056"/>
+      <circle cx="338" cy="457" r="4.5" fill="#E28056"/>
+      <circle cx="269" cy="252" r="4.5" fill="#E28056"/>
+
+      <!-- Center YOU -->
+      <text x="450" y="303" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="54" font-weight="700" fill="#E28056" letter-spacing="2">YOU</text>
+      <text x="450" y="334" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="8.5" fill="#a0aaaf" letter-spacing="2.2">AT THE CENTER</text>
+
+      <!-- RETIREMENT — top -->
+      <text x="450" y="76" text-anchor="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Retirement Planning</text>
+      <text x="450" y="93" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Balance today with tomorrow</text>
+
+      <!-- PROTECTION — upper right -->
+      <text x="650" y="228" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Protection Planning</text>
+      <text x="650" y="245" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Protect what matters most</text>
+
+      <!-- INVESTMENT — lower right -->
+      <text x="580" y="494" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Investment Planning</text>
+      <text x="580" y="511" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">The IMPACT Framework</text>
+
+      <!-- TAX — lower left -->
+      <text x="320" y="494" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Tax Planning</text>
+      <text x="320" y="511" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Keep more of what you earn</text>
+
+      <!-- ESTATE — upper left -->
+      <text x="250" y="228" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Estate Planning</text>
+      <text x="250" y="245" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="10" fill="#a0aaaf">Secure your legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     V5 — CALLOUT DIAGRAM
+     Technical diagram style with elbow callout lines.
+     Precise, editorial, illustration-like.
+═══════════════════════════════════════════ -->
+<section class="variant">
+  <div class="variant-header">
+    <div class="variant-num">05</div>
+    <div class="variant-info">
+      <span class="eyebrow">Variant Five</span>
+      <h2 class="variant-title">Callout Diagram</h2>
+      <p class="variant-desc">Each service "calls out" from the circle with an elbow line, like a technical illustration or anatomy diagram. Feels precise and thoughtful. Communicates that every service is a distinct, identified component of a whole system.</p>
+    </div>
+  </div>
+  <div class="svg-card">
+    <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Callout Diagram variant: services labeled via callout lines from a central circle">
+
+      <!-- Single orbit circle (muted) -->
+      <circle cx="450" cy="310" r="185" fill="none" stroke="#586067" stroke-width="0.7" opacity="0.2"/>
+
+      <!-- Service dots on orbit -->
+      <circle cx="450" cy="125" r="4" fill="#E28056"/>
+      <circle cx="626" cy="253" r="4" fill="#E28056"/>
+      <circle cx="559" cy="456" r="4" fill="#E28056"/>
+      <circle cx="341" cy="456" r="4" fill="#E28056"/>
+      <circle cx="274" cy="253" r="4" fill="#E28056"/>
+
+      <!-- CALLOUT LINES ── each has: radial segment → elbow → horizontal rule -->
+
+      <!-- RETIREMENT (top): straight up, then horizontal rule centered -->
+      <polyline points="450,121 450,64" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.7"/>
+      <line x1="370" y1="64" x2="530" y2="64" stroke="#E28056" stroke-width="0.6" opacity="0.4"/>
+
+      <!-- PROTECTION (upper right): diagonal out, then horizontal right -->
+      <polyline points="631,249 684,198 752,198" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- INVESTMENT (lower right): diagonal out, then horizontal right -->
+      <polyline points="563,459 610,513 675,513" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- TAX (lower left): diagonal out, then horizontal left -->
+      <polyline points="337,459 290,513 225,513" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- ESTATE (upper left): diagonal out, then horizontal left -->
+      <polyline points="269,249 216,198 148,198" fill="none" stroke="#E28056" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- Small endpoint caps on horizontal rules -->
+      <line x1="752" y1="194" x2="752" y2="202" stroke="#E28056" stroke-width="1" opacity="0.5"/>
+      <line x1="675" y1="509" x2="675" y2="517" stroke="#E28056" stroke-width="1" opacity="0.5"/>
+      <line x1="225" y1="509" x2="225" y2="517" stroke="#E28056" stroke-width="1" opacity="0.5"/>
+      <line x1="148" y1="194" x2="148" y2="202" stroke="#E28056" stroke-width="1" opacity="0.5"/>
+
+      <!-- YOU — center -->
+      <text x="450" y="304" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="62" font-weight="700" fill="#E28056" letter-spacing="3">YOU</text>
+      <text x="450" y="340" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9" fill="#a0aaaf" letter-spacing="2.5">YOUR PLAN · YOUR TERMS</text>
+
+      <!-- RETIREMENT — top callout label -->
+      <text x="450" y="50" text-anchor="middle"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Retirement Planning</text>
+      <text x="450" y="40" text-anchor="middle"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9.5" fill="#a0aaaf">Balance today with tomorrow</text>
+
+      <!-- PROTECTION — upper right callout label -->
+      <text x="757" y="194" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Protection Planning</text>
+      <text x="757" y="210" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9.5" fill="#a0aaaf">Protect what matters most</text>
+
+      <!-- INVESTMENT — lower right callout label -->
+      <text x="680" y="509" text-anchor="start"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Investment Planning</text>
+      <text x="680" y="525" text-anchor="start"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9.5" fill="#a0aaaf">The IMPACT Framework</text>
+
+      <!-- TAX — lower left callout label -->
+      <text x="220" y="509" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Tax Planning</text>
+      <text x="220" y="525" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9.5" fill="#a0aaaf">Keep more of what you earn</text>
+
+      <!-- ESTATE — upper left callout label -->
+      <text x="143" y="194" text-anchor="end"
+        font-family="'Bodoni Moda',Georgia,serif"
+        font-size="15" font-weight="700" fill="#586067">Estate Planning</text>
+      <text x="143" y="210" text-anchor="end"
+        font-family="'DM Sans',Arial,sans-serif"
+        font-size="9.5" fill="#a0aaaf">Secure your legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="page-foot">
+  <span class="page-foot-logo">Impact Wealth Partners</span>
+  <a href="index.html" class="page-foot-link">← Return to Site</a>
+</footer>
+
+</body>
+</html>
