@@ -336,14 +336,7 @@ ul{list-style:none}
 /* ── BENEFITS ── */
 .benefits-section{padding:5rem 5%;background:var(--bg-alt)}
 
-.bcard{background:var(--bg);padding:2rem;transition:background .25s}
-.bcard:hover{background:var(--surface)}
-.bcard-img{width:100%;height:160px;overflow:hidden;background:var(--img-fall);margin-bottom:1.2rem}
-.bcard-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) saturate(.82);transition:filter .4s,transform .5s}
-.bcard:hover .bcard-img img{filter:brightness(.96) saturate(.88);transform:scale(1.04)}
-
-.bcard h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--heading);margin-bottom:.35rem}
-.bcard p{font-size:.82rem;color:var(--body);line-height:1.78;font-weight:300}
+/* old .bcard system removed */
 
 /* ── CONTACT ── */
 .contact-section{background:var(--accent);padding:4.5rem 5%}
@@ -351,12 +344,7 @@ ul{list-style:none}
 .contact-heading{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:500;color:#fff;line-height:1.15;margin-bottom:.8rem}
 .contact-heading em{font-style:italic}
 .contact-sub{font-size:.92rem;color:rgba(255,255,255,.82);line-height:1.82;font-weight:300}
-.sub-form{display:flex;flex-direction:column;gap:.6rem;margin-top:1.8rem}
-.sub-form input{padding:.8rem 1rem;border:none;background:rgba(255,255,255,.15);color:#fff;font-family:var(--sans);font-size:.88rem;outline:none;backdrop-filter:blur(4px)}
-.sub-form input::placeholder{color:rgba(255,255,255,.5)}
-.sub-form input:focus{background:rgba(255,255,255,.22)}
-.sub-form button{padding:.8rem 1.5rem;background:#fff;color:var(--accent);font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .22s;align-self:flex-start}
-.sub-form button:hover{background:var(--dark);color:#fff}
+/* .sub-form CSS on contact.html */
 .contact-cards{display:flex;flex-direction:column;gap:.6rem}
 .ccard{padding:1rem 1.2rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);transition:background .2s}
 .ccard:hover{background:rgba(255,255,255,.2)}
@@ -388,25 +376,22 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .impact-stats{grid-template-columns:repeat(4,1fr)}
   .benefits-grid{grid-template-columns:repeat(4,1fr)}
   
-  .sub-form{flex-direction:row;flex-wrap:wrap}
-  .sub-form input{flex:1;min-width:140px}
-  .sub-form button{align-self:stretch}
   .contact-cards{flex-direction:row;flex-wrap:wrap}
   .ccard{flex:1;min-width:160px}
 }
 
 /* ══ DESKTOP 920px ══ */
-@media(min-width:920px){
+@media(min-width:1024px){
   .hamburger{display:none}
   .nav-links{display:flex;align-items:center;gap:.1rem}
   .nav-links li a{font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--nav-text);padding:.5rem .7rem;position:relative;transition:color .2s}
   .nav-links li a::after{content:'';position:absolute;bottom:0;left:.7rem;right:.7rem;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
   .nav-links li a:hover{color:var(--accent)}
   .nav-links li a:hover::after{transform:scaleX(1)}
-  .nav-pill{display:inline-block;border:1px solid var(--border);color:var(--nav-text);padding:.4rem 1.1rem;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:.6rem;transition:all .2s}
-  .nav-pill:hover{background:var(--dark);border-color:var(--dark);color:#fff}
+  .nav-pill{display:inline-block;background:var(--accent);border:1.5px solid var(--accent);color:#fff;padding:.4rem 1.1rem;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:.6rem;transition:all .2s}
+  .nav-pill:hover{background:#fff;border-color:var(--accent);color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 
-  #hero{flex-direction:row;align-items:stretch;min-height:100vh;min-height:calc(100svh - 74px);max-height:900px}
+  #hero{flex-direction:row;align-items:stretch;min-height:100dvh;min-height:calc(100svh - 74px);max-height:900px}
   .hero-dark{flex:0 0 52%;padding:0 5% 0 6%;min-height:unset;justify-content:center}
   .hero-dark::before{font-size:28rem}
   .hero-photo{flex:1;align-self:stretch;height:auto;min-height:unset;max-height:unset}
@@ -417,7 +402,6 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .feature{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
   .feature-img{order:0;align-self:stretch;height:auto;min-height:380px;max-height:560px}
   .feature.flip .feature-img{order:-1}
-  .feature-body{padding:5rem 6%}
   .feature-num{font-size:5rem}
 
   .services-section{padding:6.5rem 5%}
@@ -425,20 +409,16 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .benefits-section{padding:6.5rem 5%}
   .benefits-grid{grid-template-columns:repeat(5,1fr)}
   
-  .bcard:nth-child(even){margin-top:-2.5rem}
   .benefits-grid{align-items:start}
   .contact-section{padding:5.5rem 5%}
   .contact-inner{flex-direction:row;align-items:flex-start;gap:5rem}
   .contact-right{flex:0 0 380px}
-  .sub-form{flex-direction:column}
-  .sub-form input{width:100%}
-  .sub-form button{align-self:flex-start}
   .contact-cards{flex-direction:column}
   footer{padding:3.5rem 5% 2rem}
 }
 
 /* ══ LARGE 1200px ══ */
-@media(min-width:1200px){
+@media(min-width:1440px){
   #nav{padding:0 7%}
   #hero{max-height:920px}
   .hero-dark{padding:0 5% 0 7%}
@@ -536,7 +516,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 }
 
 /* ── TABLET / DESKTOP OVERRIDES ──────────────────────────── */
-@media (min-width: 920px) {
+@media (min-width: 1024px) {
   .benefit-editorial { margin-top: 3.5rem; }
   .ben-row {
     grid-template-columns: 4rem 1fr auto;
@@ -561,7 +541,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 /* On mobile: photo always on top */
 
 /* On desktop: true alternating via grid */
-@media (min-width: 920px) {
+@media (min-width: 640px) {
   .feature { display: grid; grid-template-columns: 1fr 1fr; }
   .feature-img { order: 0; } /* resets mobile -1 */
   /* .flip puts image on RIGHT: text (order 0 default) goes left, img (order 1) goes right */
@@ -602,8 +582,6 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   gap: 3rem;
 }
 .ben-card.featured:hover { background: var(--dark-mid); }
-.ben-card:hover
-.ben-card.featured
 .ben-card-accent {
   width: 28px; height: 3px;
   background: var(--accent);
@@ -645,11 +623,10 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .ben-mosaic { grid-template-columns: repeat(2, 1fr); }
   .ben-card.featured { grid-column: span 2; flex-direction: row; }
 }
-@media (min-width: 920px) {
+@media (min-width: 1024px) {
   .ben-mosaic { margin-top: 3rem; }
   .ben-card { padding: 2.5rem 2.2rem; }
   .ben-card.featured { padding: 3.5rem 3rem; }
-.ben-card.featured
 }
 
 
@@ -663,23 +640,23 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 /* Feature image: shorter, proportional */
 
 /* Desktop feature overrides */
-@media(min-width:920px){
+@media(min-width:1024px){
   .feature-body { padding: 3rem 6%; }
   .feature-img {
     min-height: 280px !important;
     max-height: 460px !important;
     height: 100% !important;
   }
-  /* Tighter section padding across the board */
+  /* Laptop+ section padding */
   .section,
   .services-section,
   .impact-section,
-  .benefits-section { padding: 4.5rem 5%; }
+  .benefits-section { padding: 5rem 5%; }
   .pillars { padding: 0; }
   .pillar { padding: 2.4rem 2.2rem; }
 }
 
-@media(min-width:1200px){
+@media(min-width:1440px){
   .section,
   .services-section,
   .impact-section,
@@ -696,10 +673,10 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 /* Compact hero-dark padding */
 
-@media(min-width:920px){
+@media(min-width:1024px){
   .hero-dark { padding: 0 5% 0 6%; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .hero-dark { padding: 0 5% 0 7%; }
 }
 
@@ -710,16 +687,16 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 /* Tighten contact section */
 
-@media(min-width:920px){
-  .contact-section { padding: 4.5rem 5%; }
+@media(min-width:1024px){
+  .contact-section { padding: 5rem 5%; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .contact-section { padding: 5rem 7%; }
 }
 
 /* Tighten footer */
 
-@media(min-width:920px){
+@media(min-width:1024px){
   footer { padding: 3rem 5% 1.8rem; }
 }
 
@@ -732,10 +709,10 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 /* Impact quote section: compact */
 
-@media(min-width:920px){
-  .impact-section { padding: 4.5rem 5% !important; }
+@media(min-width:1024px){
+  .impact-section { padding: 5rem 5% !important; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .impact-section { padding: 5rem 7% !important; }
 }
 
@@ -794,17 +771,350 @@ display:none;
 .svc-card h3 { font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--accent); margin-bottom:.4rem; line-height:1.3; }
 .svc-card p { font-size:.84rem; color:var(--body); line-height:1.8; font-weight:300; }
 @media(min-width:640px) { .svc-grid { grid-template-columns:1fr 1fr; } }
-@media(min-width:920px) {
-  .svc-grid { grid-template-columns:repeat(3,1fr); }
-  .svc-card:nth-child(4) { grid-column:1; }
-  .svc-card:nth-child(5) { grid-column:2; }
+@media(min-width:640px) {
+  .svc-grid { grid-template-columns:repeat(2,1fr); }
 }
-/* Desktop: show SVG wheel, hide card grid */
-@media(min-width:1100px) {
+@media(min-width:1024px) {
+  .svc-grid { grid-template-columns:repeat(3,1fr); }
+}
+/* Laptop+: show SVG wheel, hide card grid */
+@media(min-width:1024px) {
   .svc-wheel-svg-wrap { display:block; }
   .svc-grid { display:none; }
 }
 #about-detail{margin-top:0;padding-top:0}
+html{scrollbar-width:none;scroll-behavior:smooth}html::-webkit-scrollbar{display:none}
+.display,.hero-dark h1,.impact-quote{text-wrap:balance}
+
+
+/* ══════════════════════════════════════════════════════════
+   LAPTOP (920px – 1199px)
+   Same desktop layout, just scaled tighter
+══════════════════════════════════════════════════════════ */
+@media(min-width:1024px) and (max-width:1439px){
+  #hero{max-height:780px;min-height:560px}
+  .hero-dark{padding:0 4% 0 5%}
+  .hero-dark h1{font-size:clamp(1.8rem,3.2vw,2.8rem)}
+  .section,.services-section,.impact-section,.benefits-section,.contact-section{padding:5.5rem 5%}
+  .cta-row{padding:2.8rem 5%}
+  .pillars{padding:3.5rem 5%}
+  .impact-quote{font-size:clamp(1.3rem,2.8vw,2rem)}
+  .contact-inner{gap:3.5rem}
+  .contact-right{flex:0 0 340px}
+}
+
+/* ══════════════════════════════════════════════════════════
+   TABLET (640px – 919px)
+══════════════════════════════════════════════════════════ */
+@media(min-width:640px) and (max-width:1023px){
+  .hero-photo{height:48vw;max-height:380px}
+  .feature-img{height:46vw}
+  .impact-stats{grid-template-columns:repeat(2,1fr)}
+  .section,.services-section,.impact-section,.benefits-section,.contact-section{padding:4rem 5%}
+  .contact-inner{flex-direction:column;gap:2.5rem}
+}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE REBUILD (max-width: 639px)
+══════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE TIER SYSTEM
+   Phone    →  <640px   (see max-width:639px block below)
+   Tablet   →  640–1023px
+   Laptop   →  1024–1439px  (full desktop layout, tighter)
+   Desktop  →  1440px+      (same layout, more breathing room)
+════════════════════════════════════════════════════════════ */
+
+/* ── TABLET (640–1023px) ─────────────────────────────────── */
+@media(min-width:640px) and (max-width:1023px){
+  /* Hero: spacious stacked layout */
+  #hero{flex-direction:column}
+  .hero-photo{height:52vw;max-height:380px;position:relative;min-height:220px}
+  .hero-dark{padding:2.8rem 6% 3.2rem}
+  .hero-dark h1{font-size:clamp(1.9rem,4.5vw,2.6rem)}
+
+  /* Features: 2-col side-by-side on tablet */
+  .feature-img{height:44vw;max-height:340px}
+  .feature-body{padding:2.5rem 6%}
+
+  /* Services: 2-col card grid */
+  .svc-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .svc-card{
+    border-left:3px solid var(--accent);
+    background:var(--surface);
+    padding:1.5rem 1.3rem;
+    box-shadow:0 1px 6px rgba(88,96,103,.07);
+    display:block;border-radius:0;
+  }
+  .svc-card h3{font-size:1rem;color:var(--accent);font-family:var(--serif);margin-bottom:.4rem}
+  .svc-card p{font-size:.85rem}
+  .svc-card-icon{width:40px;height:40px;margin-top:.9rem}
+
+  /* Sections */
+  .section,.services-section,.impact-section,.benefits-section{padding:4rem 6%}
+  .contact-section{padding:3.5rem 6%}
+  .cta-row{padding:2.5rem 6%}
+  footer{padding:2.8rem 6% 2rem}
+
+  /* Impact */
+  .impact-stats{grid-template-columns:repeat(2,1fr)}
+  .impact-quote{font-size:clamp(1.2rem,3vw,1.7rem)}
+
+  /* Benefits */
+  .ben-mosaic{grid-template-columns:repeat(2,1fr)}
+  .ben-card{padding:1.8rem 1.5rem}
+
+  /* Contact */
+  .contact-inner{flex-direction:column;gap:2.5rem}
+}
+
+/* ── LAPTOP (1024–1439px) ─────────────────────────────────── */
+@media(min-width:1024px) and (max-width:1439px){
+  #hero{max-height:820px;min-height:600px}
+  .hero-dark h1{font-size:clamp(2rem,3.2vw,3rem)}
+  .section,.services-section,.impact-section,.benefits-section{padding:5.5rem 5%}
+  .contact-section{padding:5.5rem 5%}
+  .cta-row{padding:3rem 5%}
+  .pillars{padding:0}
+  .impact-quote{font-size:clamp(1.4rem,2.6vw,2.1rem)}
+  footer{padding:3.2rem 5% 2rem}
+}
+
+/* ── DESKTOP (1440px+) ────────────────────────────────────── */
+@media(min-width:1440px){
+  /* Max-width container — content stays readable on wide screens */
+  #hero .hero-dark,
+  .section > *,
+  .services-section > *,
+  .impact-section > *,
+  .benefits-section > *,
+  .contact-section > *,
+  .cta-row > *{max-width:1360px;margin-left:auto;margin-right:auto}
+
+  /* Generous desktop spacing */
+  .section,.services-section,.impact-section,.benefits-section{
+    padding:7rem max(7%, calc((100vw - 1360px) / 2));
+  }
+  .contact-section{
+    padding:6rem max(7%, calc((100vw - 1360px) / 2));
+  }
+  #hero .hero-dark{
+    padding:0 max(5%, calc((100vw - 1360px) / 2));
+  }
+  footer{
+    padding:4rem max(7%, calc((100vw - 1360px) / 2)) 2.5rem;
+  }
+  .hero-dark h1{font-size:clamp(2.4rem,3.5vw,3.6rem)}
+  .impact-quote{font-size:clamp(1.6rem,2.5vw,2.4rem)}
+}
+
+@media(max-width:639px){
+
+  /* ══ NAV ══ */
+  #nav{height:60px;padding:0 6%}
+  .nav-logo img{height:36px}
+  .hamburger{padding:7px 8px;gap:5px;border-color:rgba(88,96,103,.2)}
+  .hamburger span{width:20px;height:1.5px}
+
+  /* ══ MOBILE NAV PANEL ══ */
+  .nav-panel{
+    inset:60px 0 0;padding:0;
+    background:var(--dark);overflow-y:auto;
+  }
+  .nav-panel a{
+    display:block;font-size:1rem;font-weight:400;
+    color:rgba(255,255,255,.75);
+    padding:1.1rem 6%;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    letter-spacing:.01em;text-transform:none;
+    transition:background .15s,color .15s;
+  }
+  .nav-panel a:hover{background:rgba(255,255,255,.05);color:#fff}
+  .nav-panel a:last-child{
+    display:block;
+    margin:1.5rem 6%;padding:.9rem 1.5rem;
+    background:var(--accent);color:#fff;
+    text-align:center;font-size:.78rem;
+    font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    border:none;border-radius:0;
+  }
+  .nav-panel a:last-child:hover{background:var(--accent-dk)}
+
+  /* ══ HERO — full viewport, image background ══ */
+  #hero{
+    position:relative;
+    display:flex;align-items:flex-end;
+    min-height:100svh;min-height:100vh;
+    overflow:hidden;
+  }
+  .hero-photo{
+    position:absolute;inset:0;
+    height:100%;max-height:none;min-height:none;
+    z-index:0;
+  }
+  .hero-photo img{object-position:center 25%}
+  .hero-photo::after{
+    background:linear-gradient(
+      to top,
+      rgba(88,96,103,1) 0%,
+      rgba(88,96,103,.97) 18%,
+      rgba(88,96,103,.78) 42%,
+      rgba(88,96,103,.28) 68%,
+      transparent 100%
+    );
+  }
+  .hero-dark{
+    position:relative;z-index:1;
+    background:transparent;
+    padding:0 6% 3rem;width:100%;
+  }
+  .hero-dark::before{display:none}
+  .hero-eyebrow{font-size:.6rem;letter-spacing:.22em}
+  .hero-dark h1{
+    font-size:2rem;line-height:1.12;
+    letter-spacing:-.01em;margin-bottom:.9rem;
+  }
+  .hero-dark p{
+    font-size:.9rem;line-height:1.8;
+    color:rgba(255,255,255,.68);
+    margin-bottom:1.6rem;max-width:100%;
+  }
+
+  /* ══ CTA ROWS ══ */
+  .cta-row{
+    padding:2rem 6%;
+    flex-direction:column;align-items:flex-start;gap:.8rem;
+  }
+
+  /* ══ SECTIONS — consistent spacing ══ */
+  .section,
+  .services-section,
+  .impact-section,
+  .benefits-section{padding:3rem 6%}
+  .contact-section{padding:3rem 6% 3.5rem}
+  .eyebrow{font-size:.62rem;letter-spacing:.2em}
+  .display{font-size:clamp(1.5rem,6.5vw,2rem);line-height:1.18}
+  .lead{font-size:.9rem;line-height:1.82}
+
+  /* ══ FEATURE SECTIONS ══ */
+  .feature{display:block}
+  .feature-img{
+    width:100%;height:58vw;
+    min-height:220px;max-height:280px;
+    order:0 !important;
+  }
+  .feature-body{padding:2rem 6%}
+  .feature-body h2{
+    font-size:clamp(1.2rem,5.5vw,1.6rem);
+    line-height:1.22;margin-bottom:.7rem;
+  }
+  .feature-body p{font-size:.88rem;line-height:1.82}
+  .feature-num{display:none}
+
+  /* ══ PILLARS ══ */
+  .pillars{grid-template-columns:1fr;gap:1px;padding:0}
+  .pillar{padding:1.6rem 6%}
+  .pillar h3{font-size:1rem}
+  .pillar p{font-size:.82rem}
+
+  /* ══ SERVICE CARDS — horizontal card layout ══ */
+  .svc-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+    background:transparent;
+    margin-top:1.5rem;
+  }
+  .svc-card{
+    background:var(--surface);
+    border:none;
+    border-left:3px solid var(--accent);
+    border-radius:0;
+    padding:1.25rem 1.1rem 1.25rem 1.3rem;
+    display:grid;
+    grid-template-columns:1fr 44px;
+    grid-template-rows:auto auto;
+    column-gap:.9rem;
+    row-gap:.25rem;
+    align-items:start;
+    box-shadow:0 1px 6px rgba(88,96,103,.07);
+    transform:none;
+    transition:none;
+  }
+  .svc-card::before{display:none}
+  .svc-card:hover{
+    transform:none;
+    box-shadow:0 1px 6px rgba(88,96,103,.07);
+    background:var(--surface);
+  }
+  .svc-card h3{
+    font-family:var(--serif);
+    font-size:.96rem;font-weight:700;
+    color:var(--accent);margin:0;line-height:1.28;
+    grid-column:1;grid-row:1;
+  }
+  .svc-card p{
+    font-size:.83rem;line-height:1.75;
+    color:var(--body);font-weight:300;margin:0;
+    grid-column:1;grid-row:2;
+  }
+  .svc-card-icon{
+    width:44px;height:44px;
+    border:1.5px solid var(--accent);
+    background:#F5ECE6;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    grid-column:2;grid-row:1/3;
+    align-self:center;
+    margin:0;flex-shrink:0;
+  }
+  .svc-card-icon svg{
+    width:20px;height:20px;
+    stroke:var(--accent);
+  }
+
+  /* ══ IMPACT ══ */
+  .impact-section::before{font-size:9rem}
+  .impact-quote{
+    font-size:clamp(1.15rem,5.5vw,1.5rem);
+    line-height:1.5;
+  }
+  .impact-stats{
+    grid-template-columns:1fr 1fr;
+    gap:1px;margin-top:2rem;
+  }
+  .istat{padding:1.1rem .8rem}
+  .istat-n{font-size:1.75rem}
+  .istat-l{font-size:.58rem;letter-spacing:.12em}
+
+  /* ══ BENEFITS ══ */
+  .ben-mosaic{
+    grid-template-columns:1fr 1fr;
+    gap:2px;margin-top:1.8rem;
+  }
+  .ben-card{padding:1.3rem 1.1rem}
+  .ben-card-accent{width:24px;height:3px;margin-bottom:.7rem;margin-top:0}
+  .ben-card-body h3{font-size:.88rem;line-height:1.35;margin-bottom:.3rem}
+  .ben-card-body p{font-size:.76rem;line-height:1.7}
+  .ben-card-tag{font-size:.54rem;padding:.15rem .4rem;margin-top:.5rem}
+
+  /* ══ CONTACT ══ */
+  .contact-inner{flex-direction:column;gap:2rem}
+  .contact-heading{font-size:clamp(1.4rem,6.5vw,2rem);line-height:1.15}
+  .contact-sub{font-size:.88rem;line-height:1.8}
+  .contact-cards{flex-direction:column;gap:6px}
+  .ccard{padding:.85rem 1rem}
+  .ccard-lbl{font-size:.56rem}
+  .ccard a{font-size:.9rem}
+
+  /* ══ FOOTER ══ */
+  footer{padding:2.5rem 6% 2rem}
+  .footer-logo{height:36px;margin-bottom:1.1rem}
+  .footer-nav{gap:.2rem .9rem;margin-bottom:1rem}
+  .footer-nav a{font-size:.72rem}
+  .footer-disc{font-size:.6rem;line-height:1.72}
+
+}
+
 </style>
 </head>
 
@@ -1085,7 +1395,7 @@ display:none;
       <div class="ben-card-accent"></div>
       <div class="ben-card-body">
         <h3>Personalized Financial Advice</h3>
-        <p>Our mission is to provide advice tailored specifically to your life stories and financial journeys, presenting guidance that resonates with your personal values and long-term goals — not a template applied to everyone</p>
+        <p>Our mission is to provide advice tailored specifically to your life stories and financial journeys, presenting guidance that resonates with your personal values and long-term goals — not a template applied to everyone.</p>
         <span class="ben-card-tag">Tailored</span>
       </div>
     </div>
@@ -1123,12 +1433,10 @@ display:none;
       <span class="eyebrow" style="color:rgba(255,255,255,.7)">Get in Touch</span>
       <h2 class="contact-heading">Place your legacy in hands you can <em>trust.</em></h2>
       <p class="contact-sub">Schedule a complimentary call with Michael Peterson &mdash; no obligation, no pressure. Just an honest conversation about your financial future in the Phoenix area.</p>
-      <form class="sub-form" onsubmit="return false;" aria-label="Newsletter">
-        <input type="text" placeholder="First Name" aria-label="First Name"/>
-        <input type="text" placeholder="Last Name" aria-label="Last Name"/>
-        <input type="email" placeholder="Email Address" aria-label="Email"/>
-        <button type="submit">Subscribe</button>
-      </form>
+      <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+        <a href="contact.html" class="btn-dark" style="background:#fff;color:var(--accent)">Schedule a Call &rarr;</a>
+        <a href="tel:+16233431941" style="font-size:.82rem;color:rgba(255,255,255,.7);font-weight:300;letter-spacing:.02em">or call (623) 343-1941</a>
+      </div>
     </div>
     <div class="contact-right">
       <div class="contact-cards" itemscope itemtype="https://schema.org/LocalBusiness">

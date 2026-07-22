@@ -172,7 +172,7 @@
           "name": "How much does a financial advisor cost in Phoenix AZ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "At Impact Wealth Partners, our annual advisory fee is 0.70% of assets under management, with an annual maximum of $18,000. This covers retirement income planning, investment management, tax-efficient withdrawal strategies, Medicare guidance, Social Security optimization, estate planning coordination, and ongoing financial planning. Once your fee reaches the annual maximum, it does not continue increasing as your portfolio grows."
+            "text": "At Impact Wealth Partners, our annual advisory fee is tiered: 1.00% on the first $250,000, 0.80% from $250,000 to $1.5 million, and 0.60% above $1.5 million. The annual maximum fee is $18,000 — once your advisory fee reaches that cap, it does not continue increasing as your portfolio grows. This covers retirement income planning, investment management, tax-efficient withdrawal strategies, Medicare guidance, Social Security optimization, estate planning coordination, and ongoing financial planning."
           }
         },
         {
@@ -427,15 +427,15 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 }
 
 /* ══ DESKTOP 920px ══ */
-@media(min-width:920px){
+@media(min-width:1024px){
   .hamburger{display:none}
   .nav-links{display:flex;align-items:center;gap:.1rem}
   .nav-links li a{font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--nav-text);padding:.5rem .7rem;position:relative;transition:color .2s}
   .nav-links li a::after{content:'';position:absolute;bottom:0;left:.7rem;right:.7rem;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
   .nav-links li a:hover{color:var(--accent)}
   .nav-links li a:hover::after{transform:scaleX(1)}
-  .nav-pill{display:inline-block;border:1px solid var(--border);color:var(--nav-text);padding:.4rem 1.1rem;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:.6rem;transition:all .2s}
-  .nav-pill:hover{background:var(--dark);border-color:var(--dark);color:#fff}
+  .nav-pill{display:inline-block;background:var(--accent);border:1.5px solid var(--accent);color:#fff;padding:.4rem 1.1rem;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:.6rem;transition:all .2s}
+  .nav-pill:hover{background:#fff;border-color:var(--accent);color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 
   #hero{flex-direction:row;min-height:calc(100svh - 74px);max-height:900px}
   .hero-dark{flex:0 0 52%;padding:0 5% 0 6%;min-height:unset;justify-content:center}
@@ -469,7 +469,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 }
 
 /* ══ LARGE 1200px ══ */
-@media(min-width:1200px){
+@media(min-width:1440px){
   #nav{padding:0 7%}
   #hero{max-height:920px}
   .hero-dark{padding:0 5% 0 7%}
@@ -648,7 +648,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 @media (min-width: 640px) {
   .svc-bento { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 920px) {
+@media (min-width: 1024px) {
   .svc-bento { grid-template-columns: repeat(3, 1fr); margin-top: 3rem; }
   .svc-card { padding: 2.4rem 2.2rem; }
   .benefit-editorial { margin-top: 3.5rem; }
@@ -670,7 +670,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
     white-space: nowrap;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .svc-bento { margin-top: 3.5rem; }
 }
 
@@ -678,7 +678,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 /* On mobile: photo always on top */
 
 /* On desktop: true alternating via grid */
-@media (min-width: 920px) {
+@media (min-width: 640px) {
   .feature { display: grid; grid-template-columns: 1fr 1fr; }
   .feature-img { order: 0; } /* resets mobile -1 */
   /* .flip puts image on RIGHT: text (order 0 default) goes left, img (order 1) goes right */
@@ -766,7 +766,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .ben-mosaic { grid-template-columns: repeat(3, 1fr); }
   .ben-card.featured { grid-column: span 3; flex-direction: row; }
 }
-@media (min-width: 920px) {
+@media (min-width: 1024px) {
   .ben-mosaic { margin-top: 3rem; }
   .ben-card { padding: 2.5rem 2.2rem; }
   .ben-card.featured { padding: 3.5rem 3rem; }
@@ -800,7 +800,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
   .pillar { padding: 2.4rem 2.2rem; }
 }
 
-@media(min-width:1200px){
+@media(min-width:1440px){
   .section,
   .services-section,
   .impact-section,
@@ -820,7 +820,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 @media(min-width:920px){
   .hero-dark { padding: 0 5% 0 6%; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .hero-dark { padding: 0 5% 0 7%; }
 }
 
@@ -835,7 +835,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 @media(min-width:920px){
   .contact-section { padding: 4.5rem 5%; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .contact-section { padding: 5rem 7%; }
 }
 
@@ -857,7 +857,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 @media(min-width:920px){
   .impact-section { padding: 4.5rem 5% !important; }
 }
-@media(min-width:1200px){
+@media(min-width:1440px){
   .impact-section { padding: 5rem 7% !important; }
 }
 
@@ -878,12 +878,12 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .fees-hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1.12;margin-top:.5rem}
 .fees-hero h1 em{font-style:italic;color:var(--accent)}
 .fees-hero p{font-size:clamp(.9rem,1.6vw,1rem);color:rgba(255,255,255,.6);line-height:1.82;max-width:560px;margin-top:1rem;font-weight:300}
-@media(min-width:920px){.fees-hero{padding:8rem 5% 5rem}}
-@media(min-width:1200px){.fees-hero{padding:9rem 7% 6rem}}
+@media(min-width:1024px){.fees-hero{padding:7rem 5% 4.5rem}}
+@media(min-width:1440px){.fees-hero{padding:9rem 7% 6rem}}
 
 .fees-body{padding:4.5rem 5%;background:var(--bg)}
 @media(min-width:920px){.fees-body{padding:6rem 5%}}
-@media(min-width:1200px){.fees-body{padding:7rem 7%}}
+@media(min-width:1440px){.fees-body{padding:7rem 7%}}
 
 .fees-grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--border);margin-top:2.5rem}
 @media(min-width:640px){.fees-grid{grid-template-columns:1fr 1fr}}
@@ -910,10 +910,15 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .fee-amount span{font-size:1rem;font-weight:300;color:var(--body);font-family:var(--sans)}
 .fee-cap{font-size:.88rem;color:var(--body);font-weight:400;margin-bottom:.9rem;letter-spacing:.01em}
 .fee-cap strong{color:var(--dark);font-weight:700}
+.fee-tiers{display:flex;flex-direction:column;gap:0;margin:.5rem 0 0}
+.fee-tier{display:flex;align-items:baseline;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.fee-tier:first-child{border-top:1px solid var(--border)}
+.fee-tier-rate{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1}
+.fee-tier-range{font-size:.82rem;color:var(--body);font-weight:300;text-align:right}
 
 .fid-strip{background:var(--dark);padding:3.5rem 5%;max-width:760px;margin:0 auto}
-@media(min-width:920px){.fid-strip{padding:4.5rem 7%}}
-@media(min-width:1200px){.fid-strip{padding:5rem 7%}}
+@media(min-width:1024px){.fid-strip{padding:5rem 7%}}
+@media(min-width:1440px){.fid-strip{padding:5rem 7%}}
 .fid-strip h2{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:.8rem}
 .fid-strip h2 em{font-style:italic;color:var(--accent)}
 .fid-strip p{font-size:.9rem;color:rgba(255,255,255,.78);line-height:1.9;font-weight:300}
@@ -925,7 +930,7 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 
 .adv-section{padding:3.5rem 5%;background:var(--bg-alt);text-align:center}
 @media(min-width:920px){.adv-section{padding:5rem 5%}}
-@media(min-width:1200px){.adv-section{padding:5rem 7%}}
+@media(min-width:1440px){.adv-section{padding:5rem 7%}}
 .adv-section h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--heading);margin-bottom:.7rem}
 .adv-section p{font-size:.9rem;color:var(--body);line-height:1.82;max-width:580px;margin:0 auto 2rem;font-weight:300}
 .adv-card{background:var(--surface);border:1.5px solid var(--border);border-top:3px solid var(--accent);padding:2rem;max-width:480px;margin:0 auto;text-align:left}
@@ -951,6 +956,107 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
 .adv-modal-foot{border-top:1px solid var(--border);padding:.6rem 1.4rem;display:flex;justify-content:flex-end;flex-shrink:0;background:var(--bg-alt)}
 .adv-dl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--body);text-decoration:none;transition:color .2s}
 .adv-dl:hover{color:var(--accent)}
+html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
+
+
+
+/* ══ SHARED MOBILE (max-width:639px) ══ */
+@media(max-width:639px){
+  #nav{height:60px;padding:0 6%}
+  .nav-logo img{height:36px}
+  .hamburger{padding:7px 8px;gap:5px;border-color:rgba(88,96,103,.2)}
+  .hamburger span{width:20px;height:1.5px}
+
+  .nav-panel{inset:60px 0 0;padding:0;background:var(--dark);overflow-y:auto}
+  .nav-panel a{
+    display:block;font-size:1rem;font-weight:400;
+    color:rgba(255,255,255,.75);padding:1.1rem 6%;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    letter-spacing:.01em;text-transform:none;
+    transition:background .15s,color .15s;
+  }
+  .nav-panel a:hover{background:rgba(255,255,255,.05);color:#fff}
+  .nav-panel a:last-child{
+    display:block;margin:1.5rem 6%;padding:.9rem 1.5rem;
+    background:var(--accent);color:#fff;text-align:center;
+    font-size:.78rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;border:none;border-radius:0;
+  }
+  .nav-panel a:last-child:hover{background:var(--accent-dk)}
+
+  .display{font-size:clamp(1.5rem,6.5vw,2rem);line-height:1.18}
+  .lead{font-size:.9rem;line-height:1.82}
+  .eyebrow{font-size:.62rem;letter-spacing:.2em}
+
+  footer{padding:2.5rem 6% 2rem}
+  .footer-logo{height:36px;margin-bottom:1.1rem}
+  .footer-nav{gap:.2rem .9rem;margin-bottom:1rem}
+  .footer-nav a{font-size:.72rem}
+  .footer-disc{font-size:.6rem;line-height:1.72}
+}
+
+/* ══ FEES PAGE MOBILE ══ */
+@media(max-width:639px){
+  .fees-hero{padding:3.5rem 6% 2.5rem}
+  .fees-hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
+  .fees-hero p{font-size:.88rem}
+
+  /* Fee sections */
+  .fees-body{padding:2.5rem 6%}
+  .fees-body .display{font-size:clamp(1.4rem,6.5vw,1.9rem)}
+
+  /* Fee service card */
+  .fee-service{
+    grid-template-columns:1fr;
+    padding:1.5rem;margin-top:1.5rem;
+    gap:1.5rem;
+  }
+  .fee-amount{font-size:2.2rem}
+  .fee-cap{font-size:.82rem}
+  .coord-list li{font-size:.83rem}
+
+  /* What's included dark strip */
+  .fid-strip{
+    max-width:100%;
+    padding:2.5rem 6%;
+  }
+  .fid-strip h2{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .fee-bullets{gap:.7rem;margin-top:1.5rem}
+  .fee-bullet{font-size:.83rem}
+
+  /* Pull quote */
+  .fees-pullquote{
+    font-size:clamp(1rem,4.5vw,1.3rem);
+    padding:1.2rem 1.4rem;
+    margin-top:2rem;
+  }
+
+  /* What doesn't change + Insurance note */
+  .fees-body[style]{padding:2.5rem 6%}
+
+  /* ADV section */
+  .adv-section{padding:2.5rem 6%}
+  .adv-card{padding:1.4rem}
+  .adv-card h3{font-size:1rem}
+
+  .fees-goal{font-size:.8rem}
+}
+
+/* ── Tablet (640–1023px) ── */
+@media(min-width:640px) and (max-width:1023px){
+  .page-hero,.fees-hero,.adv-hero{padding:4rem 6% 3rem}
+  .page-hero h1,.fees-hero h1,.adv-hero h1{font-size:clamp(1.9rem,4vw,2.5rem)}
+}
+/* ── Laptop (1024–1439px) ── */
+@media(min-width:1024px) and (max-width:1439px){
+  .page-hero,.fees-hero,.adv-hero{padding:7rem 5% 4.5rem}
+}
+/* ── Desktop (1440px+) ── */
+@media(min-width:1440px){
+  .page-hero,.fees-hero,.adv-hero{
+    padding:8rem max(7%,calc((100vw - 1360px)/2)) 5.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -992,8 +1098,21 @@ footer{background:var(--nav-bg);padding:2.5rem 5% 1.5rem;text-align:center;borde
     <div class="fee-service-main">
       <span class="fee-card-label">Comprehensive Wealth Management</span>
       <h3>Annual Advisory Fee</h3>
-      <div class="fee-amount">0.70% <span>annually</span></div>
-      <p class="fee-cap">Annual maximum: <strong>$18,000</strong></p>
+      <div class="fee-tiers">
+        <div class="fee-tier">
+          <span class="fee-tier-rate">1.00%</span>
+          <span class="fee-tier-range">First $250,000</span>
+        </div>
+        <div class="fee-tier">
+          <span class="fee-tier-rate">0.80%</span>
+          <span class="fee-tier-range">$250,000 – $1.5 million</span>
+        </div>
+        <div class="fee-tier">
+          <span class="fee-tier-rate">0.60%</span>
+          <span class="fee-tier-range">$1.5 million and above</span>
+        </div>
+      </div>
+      <p class="fee-cap" style="margin-top:.9rem">Annual maximum: <strong>$18,000</strong></p>
       <p>As your assets grow, our success grows alongside yours &mdash; but only to a point. Once your advisory fee reaches the annual maximum, it doesn&rsquo;t continue increasing simply because your portfolio does. We believe that&rsquo;s a fair approach.</p>
     </div>
     <div class="fee-service-list">
